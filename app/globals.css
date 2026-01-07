@@ -7,20 +7,21 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
-  --font-serif: var(--font-playfair);
+  /* --font-serif: var(--font-playfair); */
+  --font-serif: var(--font-inter);
   
   /* RBF Brand Colors */
-  --color-purple-50: #f5f3ff;
-  --color-purple-100: #ede9fe;
-  --color-purple-200: #ddd6fe;
-  --color-purple-300: #c4b5fd;
-  --color-purple-400: #a78bfa;
-  --color-purple-500: #8b5cf6;
-  --color-purple-600: #7c3aed;
-  --color-purple-700: #6d28d9;
-  --color-purple-800: #5b21b6;
-  --color-purple-900: #4c1d95;
-  --color-purple-950: #2e1065;
+  --color-purple-50: #F5E9F3;
+  --color-purple-100: #EAD4E7;
+  --color-purple-200: #DFBFDC;
+  --color-purple-300: #D4AAD0;
+  --color-purple-400: #C996C4;
+  --color-purple-500: #BD81B9;
+  --color-purple-600: #B16CAD;
+  --color-purple-700: #A557A2;
+  --color-purple-800: #994197;
+  --color-purple-900: #8D298B;
+  --color-purple-950: #800080;
   
   --color-silver-50: #f9fafb;
   --color-silver-100: #f3f4f6;
@@ -86,9 +87,9 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.15 0.01 280);
   
-  /* Primary: Purple */
-  --primary: oklch(0.55 0.15 280); /* Purple-600 equivalent */
-  --primary-foreground: oklch(0.98 0.002 280); /* White text on purple */
+  /* Primary: Purple - using new palette */
+  --primary: #800080; /* Purple-950 - base color */
+  --primary-foreground: #ffffff; /* White text on purple */
   
   /* Secondary: Silver */
   --secondary: oklch(0.75 0.01 280); /* Silver-400 equivalent */
@@ -97,28 +98,28 @@
   --muted: oklch(0.96 0.003 280); /* Silver-100 */
   --muted-foreground: oklch(0.45 0.01 280); /* Silver-600 */
   
-  --accent: oklch(0.95 0.01 280); /* Light purple tint */
-  --accent-foreground: oklch(0.55 0.15 280);
+  --accent: #EAD4E7; /* Purple-100 - Light purple tint */
+  --accent-foreground: #A557A2; /* Purple-700 */
   
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.90 0.01 280); /* Silver-200 */
   --input: oklch(0.90 0.01 280);
-  --ring: oklch(0.55 0.15 280); /* Purple for focus rings */
+  --ring: #800080; /* Purple-950 for focus rings */
   
-  --chart-1: oklch(0.55 0.15 280); /* Purple */
+  --chart-1: #800080; /* Purple-950 - base color */
   --chart-2: oklch(0.75 0.01 280); /* Silver */
-  --chart-3: oklch(0.65 0.12 280); /* Purple variant */
-  --chart-4: oklch(0.85 0.05 280); /* Light purple */
-  --chart-5: oklch(0.70 0.08 280); /* Silver-purple mix */
+  --chart-3: #BD81B9; /* Purple-500 */
+  --chart-4: #D4AAD0; /* Purple-300 */
+  --chart-5: #C996C4; /* Purple-400 */
   
   --sidebar: oklch(0.98 0.002 280);
   --sidebar-foreground: oklch(0.15 0.01 280);
-  --sidebar-primary: oklch(0.55 0.15 280);
-  --sidebar-primary-foreground: oklch(0.98 0.002 280);
-  --sidebar-accent: oklch(0.96 0.003 280);
-  --sidebar-accent-foreground: oklch(0.15 0.01 280);
+  --sidebar-primary: #800080; /* Purple-950 - base color */
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #EAD4E7; /* Purple-100 */
+  --sidebar-accent-foreground: #8D298B; /* Purple-900 */
   --sidebar-border: oklch(0.90 0.01 280);
-  --sidebar-ring: oklch(0.55 0.15 280);
+  --sidebar-ring: #800080; /* Purple-950 */
 }
 
 .dark {
@@ -132,8 +133,8 @@
   --popover-foreground: oklch(0.98 0.002 280);
   
   /* Primary: Lighter purple for dark mode */
-  --primary: oklch(0.65 0.15 280);
-  --primary-foreground: oklch(0.10 0.01 280);
+  --primary: #BD81B9; /* Purple-500 - Slightly lighter for dark mode */
+  --primary-foreground: #ffffff;
   
   /* Secondary: Silver for dark mode */
   --secondary: oklch(0.35 0.01 280);
@@ -148,22 +149,22 @@
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(0.25 0.01 280);
   --input: oklch(0.25 0.01 280);
-  --ring: oklch(0.65 0.15 280);
+  --ring: #BD81B9; /* Purple-500 */
   
-  --chart-1: oklch(0.65 0.15 280);
+  --chart-1: #BD81B9; /* Purple-500 */
   --chart-2: oklch(0.50 0.05 280);
-  --chart-3: oklch(0.70 0.12 280);
-  --chart-4: oklch(0.60 0.10 280);
-  --chart-5: oklch(0.55 0.08 280);
+  --chart-3: #C996C4; /* Purple-400 */
+  --chart-4: #B16CAD; /* Purple-600 */
+  --chart-5: #D4AAD0; /* Purple-300 */
   
   --sidebar: oklch(0.15 0.01 280);
   --sidebar-foreground: oklch(0.98 0.002 280);
-  --sidebar-primary: oklch(0.65 0.15 280);
-  --sidebar-primary-foreground: oklch(0.10 0.01 280);
+  --sidebar-primary: #BD81B9; /* Purple-500 */
+  --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: oklch(0.20 0.01 280);
   --sidebar-accent-foreground: oklch(0.98 0.002 280);
   --sidebar-border: oklch(0.25 0.01 280);
-  --sidebar-ring: oklch(0.65 0.15 280);
+  --sidebar-ring: #BD81B9; /* Purple-500 */
 }
 
 @layer base {

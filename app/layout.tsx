@@ -18,7 +18,8 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   title: "The Regentonians Benevolent Fund | RBF Charity",
-  description: "Compassionate welfare support for alumni of Sierra Leone Grammar School during times of need.",
+  description:
+    "Compassionate welfare support for alumni of Sierra Leone Grammar School during times of need.",
 };
 
 export default function RootLayout({
