@@ -19,34 +19,179 @@ interface Event {
   imageUrl?: string;
 }
 
-async function getEvents(): Promise<Event[]> {
-  try {
-    // Import the model directly for server-side fetching
-    const connectDB = (await import("@/backend/db/connection")).default;
-    const Event = (await import("@/backend/models/Event")).default;
+// TODO: Uncomment when backend is ready
+// async function getEvents(): Promise<Event[]> {
+//   try {
+//     // Import the model directly for server-side fetching
+//     const connectDB = (await import("@/backend/db/connection")).default;
+//     const Event = (await import("@/backend/models/Event")).default;
 
-    await connectDB();
+//     await connectDB();
 
-    // Only fetch active events - filter inactive ones at the database level
-    const events = await Event.find({ isActive: true })
-      .sort({ date: 1 }) // Sort by date ascending (upcoming first)
-      .select("-__v -isActive") // Exclude isActive field since we only get active ones
-      .lean();
+//     // Only fetch active events - filter inactive ones at the database level
+//     const events = await Event.find({ isActive: true })
+//       .sort({ date: 1 }) // Sort by date ascending (upcoming first)
+//       .select("-__v -isActive") // Exclude isActive field since we only get active ones
+//       .lean();
 
-    // Convert MongoDB documents to plain objects
-    return events.map((event: any) => ({
-      _id: event._id.toString(),
-      title: event.title,
-      description: event.description,
-      date: event.date.toISOString(),
-      time: event.time,
-      location: event.location,
-      imageUrl: event.imageUrl || undefined,
-    }));
-  } catch (error) {
-    console.error("Error fetching events:", error);
-    return [];
-  }
+//     // Convert MongoDB documents to plain objects
+//     return events.map((event: any) => ({
+//       _id: event._id.toString(),
+//       title: event.title,
+//       description: event.description,
+//       date: event.date.toISOString(),
+//       time: event.time,
+//       location: event.location,
+//       imageUrl: event.imageUrl || undefined,
+//     }));
+//   } catch (error) {
+//     console.error("Error fetching events:", error);
+//     return [];
+//   }
+// }
+
+// Temporary: Dummy data for frontend-only mode
+function getEvents(): Event[] {
+  const now = new Date();
+  const dummyEvents: Event[] = [
+    {
+      _id: "1",
+      title: "Annual Reunion Dinner",
+      description:
+        "Join us for our annual reunion dinner celebrating our community and shared memories.",
+      date: new Date(now.getFullYear(), now.getMonth() + 1, 15).toISOString(),
+      time: "18:00",
+      location: "London, UK",
+      imageUrl:
+        "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&h=600&fit=crop",
+    },
+    {
+      _id: "2",
+      title: "Charity Fundraising Gala",
+      description:
+        "An elegant evening of dining and entertainment to raise funds for our benevolent activities.",
+      date: new Date(now.getFullYear(), now.getMonth() + 2, 20).toISOString(),
+      time: "19:30",
+      location: "Manchester, UK",
+      imageUrl:
+        "https://images.unsplash.com/photo-1478147427282-58a87a120781?w=800&h=600&fit=crop",
+    },
+    {
+      _id: "3",
+      title: "Community Support Workshop",
+      description:
+        "Learn about our support programs and how we help alumni in times of need.",
+      date: new Date(now.getFullYear(), now.getMonth() + 1, 28).toISOString(),
+      time: "14:00",
+      location: "Birmingham, UK",
+      imageUrl:
+        "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&h=600&fit=crop",
+    },
+    {
+      _id: "4",
+      title: "Heritage Day Celebration",
+      description:
+        "Celebrate our shared heritage and the rich history of Sierra Leone Grammar School.",
+      date: new Date(now.getFullYear(), now.getMonth() + 3, 10).toISOString(),
+      time: "12:00",
+      location: "Bristol, UK",
+      imageUrl:
+        "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=800&h=600&fit=crop",
+    },
+    {
+      _id: "5",
+      title: "Networking Breakfast",
+      description:
+        "Start your day with meaningful connections and conversations with fellow Regentonians.",
+      date: new Date(now.getFullYear(), now.getMonth() + 1, 8).toISOString(),
+      time: "08:00",
+      location: "Leeds, UK",
+      imageUrl:
+        "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=800&h=600&fit=crop",
+    },
+    {
+      _id: "6",
+      title: "Scholarship Awards Ceremony",
+      description:
+        "Honoring outstanding students and celebrating educational achievements in our community.",
+      date: new Date(now.getFullYear(), now.getMonth() + 4, 5).toISOString(),
+      time: "16:00",
+      location: "Liverpool, UK",
+      imageUrl:
+        "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&h=600&fit=crop",
+    },
+    {
+      _id: "7",
+      title: "Family Fun Day",
+      description:
+        "A day of activities, games, and entertainment for the whole family to enjoy together.",
+      date: new Date(now.getFullYear(), now.getMonth() + 2, 12).toISOString(),
+      time: "11:00",
+      location: "Sheffield, UK",
+      imageUrl:
+        "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&h=600&fit=crop",
+    },
+    {
+      _id: "8",
+      title: "Annual General Meeting",
+      description:
+        "Join us for our AGM to discuss the year's activities, finances, and future plans.",
+      date: new Date(now.getFullYear(), now.getMonth() + 5, 1).toISOString(),
+      time: "15:00",
+      location: "Edinburgh, UK",
+      imageUrl:
+        "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=600&fit=crop",
+    },
+    {
+      _id: "9",
+      title: "Cultural Heritage Exhibition",
+      description:
+        "Explore our rich cultural heritage through art, photographs, and historical artifacts.",
+      date: new Date(now.getFullYear(), now.getMonth() + 3, 25).toISOString(),
+      time: "10:00",
+      location: "Glasgow, UK",
+      imageUrl:
+        "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&h=600&fit=crop",
+    },
+    {
+      _id: "10",
+      title: "Holiday Social Gathering",
+      description:
+        "End the year with a festive gathering, good food, and great company.",
+      date: new Date(now.getFullYear(), 11, 20).toISOString(),
+      time: "18:30",
+      location: "Cardiff, UK",
+      imageUrl:
+        "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&h=600&fit=crop",
+    },
+    {
+      _id: "11",
+      title: "Annual Reunion Dinner",
+      description:
+        "Join us for our annual reunion dinner celebrating our community and shared memories.",
+      date: new Date(now.getFullYear(), now.getMonth() + 1, 15).toISOString(),
+      time: "18:00",
+      location: "London, UK",
+      imageUrl:
+        "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&h=600&fit=crop",
+    },
+    {
+      _id: "12",
+      title: "Annual Reunion Dinner",
+      description:
+        "Join us for our annual reunion dinner celebrating our community and shared memories.",
+      date: new Date(now.getFullYear(), now.getMonth() + 1, 15).toISOString(),
+      time: "18:00",
+      location: "London, UK",
+      imageUrl:
+        "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&h=600&fit=crop",
+    },
+  ];
+
+  // Sort by date ascending (upcoming first)
+  return dummyEvents.sort(
+    (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
+  );
 }
 
 function formatDate(dateString: string): string {
@@ -58,8 +203,8 @@ function formatDate(dateString: string): string {
   });
 }
 
-export default async function EventsPage() {
-  const events = await getEvents();
+export default function EventsPage() {
+  const events = getEvents();
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -81,8 +226,8 @@ export default async function EventsPage() {
                   index % 3 === 0
                     ? "animation-delay-200"
                     : index % 3 === 1
-                    ? "animation-delay-400"
-                    : "animation-delay-600";
+                      ? "animation-delay-400"
+                      : "animation-delay-600";
                 return (
                   <Card
                     key={event._id}

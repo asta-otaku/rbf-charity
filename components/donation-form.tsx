@@ -11,6 +11,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Heart, Loader2 } from "lucide-react";
+import { useToast, Toast } from "@/components/ui/toast";
 
 const suggestedAmounts = [25, 50, 100, 250, 500];
 
@@ -20,7 +21,7 @@ export function DonationForm() {
   const [customAmount, setCustomAmount] = useState("");
   const [purpose, setPurpose] = useState("");
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const { showToast, toast, hideToast } = useToast();
 
   const handleAmountSelect = (value: number) => {
     setAmount(value);
@@ -30,52 +31,67 @@ export function DonationForm() {
   const handleCustomAmount = (value: string) => {
     setCustomAmount(value);
     setAmount("");
-    setError("");
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setError("");
 
     const donationAmount = amount || parseFloat(customAmount);
 
     if (!donationAmount || donationAmount < 1) {
-      setError("Please enter a valid donation amount (minimum £1)");
+      showToast("Please enter a valid donation amount (minimum £1)", "error");
       setLoading(false);
       return;
     }
 
-    try {
-      const response = await fetch("/api/create-checkout-session", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          amount: donationAmount,
-          currency: "gbp",
-          purpose: purpose || undefined,
-        }),
-      });
+    // TODO: Uncomment when backend is ready
+    // try {
+    //   const response = await fetch("/api/create-checkout-session", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({
+    //       amount: donationAmount,
+    //       currency: "gbp",
+    //       purpose: purpose || undefined,
+    //     }),
+    //   });
 
-      const data = await response.json();
+    //   const data = await response.json();
 
-      if (!response.ok) {
-        throw new Error(data.error || "Failed to create checkout session");
-      }
+    //   if (!response.ok) {
+    //     throw new Error(data.error || "Failed to create checkout session");
+    //   }
 
-      // Redirect to Stripe Checkout using the session URL
-      if (data.url) {
-        window.location.href = data.url;
-      } else {
-        throw new Error("No checkout URL received from server");
-      }
-    } catch (err: any) {
-      console.error("Donation error:", err);
-      setError(err.message || "An error occurred. Please try again.");
+    //   // Redirect to Stripe Checkout using the session URL
+    //   if (data.url) {
+    //     window.location.href = data.url;
+    //   } else {
+    //     throw new Error("No checkout URL received from server");
+    //   }
+    // } catch (err: any) {
+    //   console.error("Donation error:", err);
+    //   setError(err.message || "An error occurred. Please try again.");
+    //   setLoading(false);
+    // }
+
+    // Temporary: Show toast notification
+    setTimeout(() => {
+      const formattedAmount = new Intl.NumberFormat("en-GB", {
+        style: "currency",
+        currency: "GBP",
+      }).format(donationAmount);
+      showToast(
+        `Thank you for your donation of ${formattedAmount}! We'll process this soon.`,
+        "success"
+      );
+      setAmount("");
+      setCustomAmount("");
+      setPurpose("");
       setLoading(false);
-    }
+    }, 500);
   };
 
   return (
@@ -153,11 +169,7 @@ export function DonationForm() {
             </select>
           </div>
 
-          {error && (
-            <div className="rounded-md bg-red-50 p-3 text-red-800 border border-red-200">
-              <p className="text-sm font-medium">{error}</p>
-            </div>
-          )}
+          {/* Error display removed - using toast instead */}
 
           <Button
             type="submit"
@@ -183,6 +195,13 @@ export function DonationForm() {
             and securely.
           </p>
         </form>
+        {toast && (
+          <Toast
+            message={toast.message}
+            type={toast.type}
+            onClose={hideToast}
+          />
+        )}
       </CardContent>
     </Card>
   );
