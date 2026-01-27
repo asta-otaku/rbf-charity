@@ -11,7 +11,7 @@ export default function JoinPage() {
       <Hero
         title="How to Join"
         description="Become part of a community dedicated to supporting one another"
-        imageUrl="/heroThree.jpg"
+        imageUrl="/heroThree.JPG"
         imageAlt="Join our community"
         imagePosition="top"
       >

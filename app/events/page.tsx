@@ -110,7 +110,7 @@ export default function EventsPage() {
       <Hero
         title="Events"
         description="Stay connected with our community through events and gatherings"
-        imageUrl="/heroTwo.jpg"
+        imageUrl="/heroTwo.JPG"
         imageAlt="Community events"
         imagePosition="top"
       >

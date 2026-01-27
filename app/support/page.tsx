@@ -17,7 +17,7 @@ export default function SupportPage() {
       <Hero
         title="Support We Provide"
         description="Three core areas where we offer compassionate assistance to our community"
-        imageUrl="/heroFour.jpg"
+        imageUrl="/heroFour.JPG"
         imageAlt="Support and assistance"
       >
       </Hero>

@@ -70,7 +70,7 @@ export default function AboutPage() {
       <Hero
         title="About Us"
         description={`Welcome to the Regentonians Benevolent Fund, learn about our mission, values, and how we operate`}
-        imageUrl="/heroThree.jpg"
+        imageUrl="/heroThree.JPG"
         imageAlt="About the charity mission"
         imagePosition="center"
       >

@@ -17,7 +17,7 @@ export default function Home() {
       <Hero
         title="The Regentonians Benevolent Fund"
         description="Providing compassionate welfare support to alumni of Sierra Leone Grammar School during times of need. Rooted in care, unity, and brotherhood."
-        imageUrl="/heroOne.jpg"
+        imageUrl="/heroOne.JPG"
         imageAlt="Community support and unity"
         imagePosition="center"
       >
@@ -40,7 +40,7 @@ export default function Home() {
           <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:items-center">
             <div className="relative h-64 w-full overflow-hidden rounded-lg sm:h-80 lg:h-96 animate-fade-in-up">
               <Image
-                src="/whatWeDo.jpeg"
+                src="/whatwedo.jpeg"
                 alt="Community support and unity"
                 fill
                 className="object-cover transition-transform duration-500 hover:scale-105"
