@@ -63,7 +63,7 @@ export const metadata: Metadata = {
       "Providing compassionate welfare support to alumni of Sierra Leone Grammar School during times of need. Supporting bereavement, illness recovery, and milestone celebrations.",
     images: [
       {
-        url: "/logo.png", // Update with your actual OG image
+        url: "/seo.png", // Update with your actual OG image
         width: 1200,
         height: 630,
         alt: "The Regentonians Benevolent Fund - Community Support",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     title: "The Regentonians Benevolent Fund | RBF Charity",
     description:
       "Compassionate welfare support for alumni of Sierra Leone Grammar School during times of need.",
-    images: ["/logo.png"], // Update with your actual Twitter image
+    images: ["/seo.png"], // Update with your actual Twitter image
     creator: "@rbfcharity", // Update with your Twitter handle if available
   },
   robots: {
@@ -92,10 +92,10 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.ico" },
-      { url: "/logo.png", sizes: "any", type: "image/png" },
+      { url: "/seo.png", sizes: "any", type: "image/png" },
     ],
     apple: [
-      { url: "/logo.png", sizes: "180x180", type: "image/png" },
+      { url: "/seo.png", sizes: "180x180", type: "image/png" },
     ],
   },
   manifest: "/site.webmanifest",

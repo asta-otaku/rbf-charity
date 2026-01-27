@@ -31,7 +31,7 @@ export function Navigation() {
               alt="RBF Logo"
               width={40}
               height={40}
-              className="w-20 h-20 object-contain"
+              className="w-8 h-8 object-contain"
               priority
             />
 
