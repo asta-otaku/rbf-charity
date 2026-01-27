@@ -64,7 +64,7 @@ export default function SignInPage() {
       <Hero
         title="Admin Sign In"
         description="Access the admin dashboard to manage events and content"
-        imageUrl="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1920&h=1080&fit=crop"
+        imageUrl="/heroFive.jpg"
         imageAlt="Admin access"
       />
 

@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -23,13 +24,17 @@ export function Navigation() {
     <nav className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2">
-            <span className="font-serif text-xl font-bold text-primary">
-              RBF
-            </span>
-            <span className="hidden text-sm text-muted-foreground sm:inline-block">
-              Regentonians Benevolent Fund
-            </span>
+          <Link href="/" className="flex items-center space-x-2 group">
+
+            <Image
+              src="/logo.png"
+              alt="RBF Logo"
+              width={40}
+              height={40}
+              className="w-20 h-20 object-contain"
+              priority
+            />
+
           </Link>
 
           {/* Desktop Navigation */}
@@ -55,7 +60,7 @@ export function Navigation() {
               href="/donate"
               className="ml-4 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
             >
-              Donate
+              Contribute
             </Link>
           </div>
 
@@ -101,7 +106,7 @@ export function Navigation() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="block rounded-md bg-primary px-3 py-2 text-base font-medium text-primary-foreground transition-colors hover:bg-primary/90 mt-2"
               >
-                Donate
+                Contribute
               </Link>
             </div>
           </div>

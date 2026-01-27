@@ -7,21 +7,22 @@ interface HeroProps {
   children?: ReactNode;
   imageUrl?: string;
   imageAlt?: string;
+  imagePosition?: "top" | "center" | "bottom";
 }
 
-export function Hero({ title, description, children, imageUrl, imageAlt }: HeroProps) {
+export function Hero({ title, description, children, imageUrl, imageAlt, imagePosition = "top" }: HeroProps) {
   const defaultImageUrl = "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1920&h=1080&fit=crop";
   const defaultAlt = "Community support and unity";
 
   return (
-    <section className="relative isolate overflow-hidden bg-gradient-to-b from-primary/20 via-primary/10 to-background py-20 sm:py-32">
+    <section className="relative isolate overflow-hidden bg-gradient-to-b from-primary/20 via-primary/10 to-background py-20 sm:py-32 md:min-h-[500px]">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 -z-10">
         <Image
           src={imageUrl || defaultImageUrl}
           alt={imageAlt || defaultAlt}
           fill
-          className="object-cover"
+          className={`object-cover object-${imagePosition}`}
           priority
           quality={90}
         />

@@ -229,7 +229,7 @@ function DonateSuccessContent() {
                     className="transition-transform duration-200 hover:scale-105"
                   >
                     <Heart className="mr-2 h-4 w-4" />
-                    Donate Again
+                    Contribute Again
                   </Button>
                 </div>
               </CardContent>
@@ -239,7 +239,7 @@ function DonateSuccessContent() {
               <CardContent className="pt-6 text-center">
                 <p className="text-sm text-muted-foreground">
                   A receipt has been sent to your email address. If you have any
-                  questions about your donation, please{" "}
+                  questions about your contribution, please{" "}
                   <Link
                     href="/contact"
                     className="text-primary hover:underline"

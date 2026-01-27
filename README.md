@@ -63,8 +63,8 @@ MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/rbf-charity?retr
 # Resend Email Service (REQUIRED for contact form notifications)
 RESEND_API_KEY=re_your_api_key_here
 EMAIL_FROM=RBF Charity <onboarding@resend.dev>  # Use your domain in production
-EMAIL_TO=contact@rbf-charity.org
-EMAIL_REPLY_TO=contact@rbf-charity.org
+EMAIL_TO=admin@theregentoniansbenevolentfund.org
+EMAIL_REPLY_TO=admin@theregentoniansbenevolentfund.org
 
 # Stripe (REQUIRED for donations - see STRIPE_SETUP.md)
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_your_key_here

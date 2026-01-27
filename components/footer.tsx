@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -7,9 +8,16 @@ export function Footer() {
         <div className="grid gap-8 md:grid-cols-4">
           {/* Brand */}
           <div className="space-y-4">
-            <h3 className="font-serif text-lg font-bold text-foreground">
-              RBF
-            </h3>
+            <Link href="/" className="inline-block">
+              <Image
+                src="/logo.png"
+                alt="RBF Logo"
+                width={60}
+                height={60}
+                className="w-20 h-20 object-contain md:-mt-3 md:-mb-8"
+                priority
+              />
+            </Link>
             <p className="text-sm text-muted-foreground">
               The Regentonians Benevolent Fund - Supporting alumni of Sierra
               Leone Grammar School through care, unity, and brotherhood.
@@ -72,7 +80,7 @@ export function Footer() {
                   href="/donate"
                   className="text-muted-foreground hover:text-primary font-medium"
                 >
-                  Donate
+                  Contribute
                 </Link>
               </li>
             </ul>
@@ -84,10 +92,10 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <a
-                  href="mailto:contact@rbf-charity.org"
+                  href="mailto:admin@theregentoniansbenevolentfund.org"
                   className="hover:text-primary"
                 >
-                  contact@rbf-charity.org
+                  admin@theregentoniansbenevolentfund.org
                 </a>
               </li>
             </ul>

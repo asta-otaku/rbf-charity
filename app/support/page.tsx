@@ -17,9 +17,10 @@ export default function SupportPage() {
       <Hero
         title="Support We Provide"
         description="Three core areas where we offer compassionate assistance to our community"
-        imageUrl="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1920&h=1080&fit=crop"
+        imageUrl="/heroFour.jpg"
         imageAlt="Support and assistance"
-      />
+      >
+      </Hero>
 
       {/* Support Areas */}
       <section className="py-16 sm:py-20">
@@ -52,7 +53,7 @@ export default function SupportPage() {
                   during these challenging times.
                 </p>
                 <p className="text-lg leading-8 text-muted-foreground">
-                  Our "Cry Berrin" program ensures that members and their
+                  Our "Cry Berrin" programme ensures that members and their
                   families receive the support they need to navigate bereavement
                   with dignity. We understand that grief affects everyone
                   differently, and we are here to help in whatever way is most
@@ -101,7 +102,7 @@ export default function SupportPage() {
                 <p className="text-lg leading-8 text-muted-foreground">
                   When a member faces illness or injury, the RBF community
                   rallies to provide support and encouragement. Our Get Well
-                  Soon program offers both practical assistance and emotional
+                  Soon programme offers both practical assistance and emotional
                   support during recovery.
                 </p>
                 <p className="text-lg leading-8 text-muted-foreground">
@@ -148,9 +149,9 @@ export default function SupportPage() {
               <CardContent className="space-y-4">
                 <p className="text-lg leading-8 text-muted-foreground">
                   Life's milestones deserve to be celebrated, and the RBF
-                  community takes great joy in recognizing significant birthdays
+                  community takes great joy in recognising significant birthdays
                   of our members. These celebrations strengthen our bonds and
-                  honor the contributions each member has made to our community.
+                  honour the contributions each member has made to our community.
                 </p>
                 <p className="text-lg leading-8 text-muted-foreground">
                   Whether it's a 50th, 60th, 70th, or another significant
@@ -192,7 +193,7 @@ export default function SupportPage() {
                 size="lg"
                 className="transition-transform duration-200 hover:scale-105"
               >
-                Donate Now
+                Contribute Now
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <Button

@@ -11,7 +11,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Heart, Loader2 } from "lucide-react";
-import { useToast, Toast } from "@/components/ui/toast";
 
 const suggestedAmounts = [25, 50, 100, 250, 500];
 
@@ -21,7 +20,7 @@ export function DonationForm() {
   const [customAmount, setCustomAmount] = useState("");
   const [purpose, setPurpose] = useState("");
   const [loading, setLoading] = useState(false);
-  const { showToast, toast, hideToast } = useToast();
+  const [error, setError] = useState("");
 
   const handleAmountSelect = (value: number) => {
     setAmount(value);
@@ -31,67 +30,52 @@ export function DonationForm() {
   const handleCustomAmount = (value: string) => {
     setCustomAmount(value);
     setAmount("");
+    setError("");
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    setError("");
 
     const donationAmount = amount || parseFloat(customAmount);
 
     if (!donationAmount || donationAmount < 1) {
-      showToast("Please enter a valid donation amount (minimum £1)", "error");
+      setError("Please enter a valid donation amount (minimum £1)");
       setLoading(false);
       return;
     }
 
-    // TODO: Uncomment when backend is ready
-    // try {
-    //   const response = await fetch("/api/create-checkout-session", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({
-    //       amount: donationAmount,
-    //       currency: "gbp",
-    //       purpose: purpose || undefined,
-    //     }),
-    //   });
+    try {
+      const response = await fetch("/api/create-checkout-session", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          amount: donationAmount,
+          currency: "gbp",
+          purpose: purpose || undefined,
+        }),
+      });
 
-    //   const data = await response.json();
+      const data = await response.json();
 
-    //   if (!response.ok) {
-    //     throw new Error(data.error || "Failed to create checkout session");
-    //   }
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to create checkout session");
+      }
 
-    //   // Redirect to Stripe Checkout using the session URL
-    //   if (data.url) {
-    //     window.location.href = data.url;
-    //   } else {
-    //     throw new Error("No checkout URL received from server");
-    //   }
-    // } catch (err: any) {
-    //   console.error("Donation error:", err);
-    //   setError(err.message || "An error occurred. Please try again.");
-    //   setLoading(false);
-    // }
-
-    // Temporary: Show toast notification
-    setTimeout(() => {
-      const formattedAmount = new Intl.NumberFormat("en-GB", {
-        style: "currency",
-        currency: "GBP",
-      }).format(donationAmount);
-      showToast(
-        `Thank you for your donation of ${formattedAmount}! We'll process this soon.`,
-        "success"
-      );
-      setAmount("");
-      setCustomAmount("");
-      setPurpose("");
+      // Redirect to Stripe Checkout using the session URL
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        throw new Error("No checkout URL received from server");
+      }
+    } catch (err: any) {
+      console.error("Donation error:", err);
+      setError(err.message || "An error occurred. Please try again.");
       setLoading(false);
-    }, 500);
+    }
   };
 
   return (
@@ -117,11 +101,10 @@ export function DonationForm() {
                   key={suggested}
                   type="button"
                   onClick={() => handleAmountSelect(suggested)}
-                  className={`rounded-md border-2 px-4 py-3 text-sm font-medium transition-all duration-200 ${
-                    amount === suggested
+                  className={`rounded-md border-2 px-4 py-3 text-sm font-medium transition-all duration-200 ${amount === suggested
                       ? "border-primary bg-primary text-primary-foreground"
                       : "border-input bg-background hover:border-primary/50 hover:bg-accent"
-                  }`}
+                    }`}
                 >
                   £{suggested}
                 </button>
@@ -169,7 +152,11 @@ export function DonationForm() {
             </select>
           </div>
 
-          {/* Error display removed - using toast instead */}
+          {error && (
+            <div className="rounded-md bg-red-50 p-3 text-red-800 border border-red-200">
+              <p className="text-sm font-medium">{error}</p>
+            </div>
+          )}
 
           <Button
             type="submit"
@@ -185,7 +172,7 @@ export function DonationForm() {
             ) : (
               <>
                 <Heart className="mr-2 h-4 w-4" />
-                Donate Now
+                Contribute Now
               </>
             )}
           </Button>
@@ -195,13 +182,6 @@ export function DonationForm() {
             and securely.
           </p>
         </form>
-        {toast && (
-          <Toast
-            message={toast.message}
-            type={toast.type}
-            onClose={hideToast}
-          />
-        )}
       </CardContent>
     </Card>
   );

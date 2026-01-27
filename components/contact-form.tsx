@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { useToast, Toast } from "@/components/ui/toast";
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -12,51 +11,44 @@ export function ContactForm() {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { showToast, toast, hideToast } = useToast();
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: "" });
 
-    // TODO: Uncomment when backend is ready
-    // try {
-    //   const response = await fetch("/api/contact", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(formData),
-    //   });
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    //   const data = await response.json();
+      const data = await response.json();
 
-    //   if (!response.ok) {
-    //     throw new Error(data.error || "Failed to submit form");
-    //   }
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to submit form");
+      }
 
-    //   setSubmitStatus({
-    //     type: "success",
-    //     message: data.message || "Thank you for your message. We'll get back to you soon!",
-    //   });
-    //   setFormData({ name: "", email: "", subject: "", message: "" });
-    // } catch (error: any) {
-    //   setSubmitStatus({
-    //     type: "error",
-    //     message: error.message || "Something went wrong. Please try again.",
-    //   });
-    // } finally {
-    //   setIsSubmitting(false);
-    // }
-
-    // Temporary: Show toast notification
-    setTimeout(() => {
-      showToast(
-        "Thank you for your message! We'll get back to you soon.",
-        "success"
-      );
+      setSubmitStatus({
+        type: "success",
+        message: data.message || "Thank you for your message. We'll get back to you soon!",
+      });
       setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error: any) {
+      setSubmitStatus({
+        type: "error",
+        message: error.message || "Something went wrong. Please try again.",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 500);
+    }
   };
 
   const handleChange = (
@@ -144,6 +136,17 @@ export function ContactForm() {
           placeholder="Your message..."
         />
       </div>
+      {submitStatus.type && (
+        <div
+          className={`rounded-md p-4 ${
+            submitStatus.type === "success"
+              ? "bg-green-50 text-green-800 border border-green-200"
+              : "bg-red-50 text-red-800 border border-red-200"
+          }`}
+        >
+          <p className="text-sm font-medium">{submitStatus.message}</p>
+        </div>
+      )}
       <Button
         type="submit"
         size="lg"
@@ -152,9 +155,7 @@ export function ContactForm() {
       >
         {isSubmitting ? "Sending..." : "Send Message"}
       </Button>
-      {toast && (
-        <Toast message={toast.message} type={toast.type} onClose={hideToast} />
-      )}
     </form>
   );
 }
+

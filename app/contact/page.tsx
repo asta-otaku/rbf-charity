@@ -7,8 +7,8 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Hero } from "@/components/hero";
-import { ContactForm } from "@/components/contact-form";
 import { Mail, MessageSquare } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function ContactPage() {
   return (
@@ -17,91 +17,121 @@ export default function ContactPage() {
       <Hero
         title="Contact Us"
         description="Get in touch with the Regentonians Benevolent Fund"
-        imageUrl="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1920&h=1080&fit=crop"
+        imageUrl="/flagbearer2.jpg"
         imageAlt="Contact us"
-      />
+        imagePosition="center"
+      >
+        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <Button href="/donate" size="lg">
+            Contribute Now
+          </Button>
+          <Button href="/join" variant="outline" size="lg">
+            How to Join
+          </Button>
+        </div>
+      </Hero>
 
-      {/* Contact Section */}
+      {/* Contact Information Section */}
       <section className="py-16 sm:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-6xl">
-            <div className="grid gap-8 lg:grid-cols-2">
-              {/* Contact Information */}
-              <div className="space-y-6">
-                <Card className="animate-fade-in-up animation-delay-600">
-                  <CardHeader>
-                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                      <Mail className="h-6 w-6 text-primary" />
-                    </div>
-                    <CardTitle className="text-2xl">
-                      Contact Information
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div>
-                      <h3 className="font-semibold text-foreground">Email</h3>
-                      <p className="mt-1 text-muted-foreground">
-                        <a
-                          href="mailto:contact@rbf-charity.org"
-                          className="text-primary hover:underline"
-                        >
-                          contact@rbf-charity.org
-                        </a>
-                      </p>
-                      <p className="mt-2 text-sm text-muted-foreground">
-                        (Email address placeholder - to be updated)
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-xl">
-                      Other Ways to Reach Us
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">
-                      We're working on setting up additional contact methods
-                      including social media links. For now, please use the
-                      contact form or email address above.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card className="bg-muted">
-                  <CardContent className="pt-6">
-                    <p className="text-sm text-muted-foreground">
-                      <strong className="font-semibold text-foreground">
-                        Response Time:
-                      </strong>{" "}
-                      We aim to respond to all inquiries within 2-3 business
-                      days. For urgent matters, please indicate this in your
-                      message.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-
-              {/* Contact Form */}
-              <Card className="animate-fade-in-up animation-delay-400">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <Card className="animate-fade-in-up">
                 <CardHeader>
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                    <MessageSquare className="h-6 w-6 text-primary" />
+                    <Mail className="h-6 w-6 text-primary" />
                   </div>
-                  <CardTitle className="text-2xl">Send Us a Message</CardTitle>
-                  <CardDescription>
-                    Fill out the form below and we'll get back to you as soon as
-                    possible.
-                  </CardDescription>
+                  <CardTitle className="text-xl">
+                    Contact Information
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ContactForm />
+                  <p className="text-muted-foreground">
+                    <a
+                      href="mailto:admin@theregentoniansbenevolentfund.org"
+                      className="text-primary hover:underline break-all"
+                    >
+                      admin@theregentoniansbenevolentfund.org
+                    </a>
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="animate-fade-in-up animation-delay-200">
+                <CardHeader>
+                  <CardTitle className="text-xl">
+                    Other Ways to Reach Us
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    We're working on setting up additional contact methods
+                    including social media links. For now, please use the
+                    contact form or email address.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-muted animate-fade-in-up animation-delay-400 sm:col-span-2 lg:col-span-1">
+                <CardContent className="pt-6">
+                  <p className="text-sm text-muted-foreground">
+                    <strong className="font-semibold text-foreground block mb-2">
+                      Response Time:
+                    </strong>
+                    We aim to respond to all inquiries within 2-3 business
+                    days. For urgent matters, please indicate this in your
+                    message.
+                  </p>
                 </CardContent>
               </Card>
             </div>
-            <div className="mt-12 grid gap-8 lg:grid-cols-2 lg:items-center">
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <section className="bg-muted py-16 sm:py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-4xl">
+            <div className="text-center mb-8 animate-fade-in-up">
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                <MessageSquare className="h-6 w-6 text-primary" />
+              </div>
+              <h2 className="font-serif text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                Send Us a Message
+              </h2>
+              <p className="mt-4 text-lg text-muted-foreground">
+                Fill out the form below and we'll get back to you as soon as
+                possible.
+              </p>
+            </div>
+            <Card className="overflow-hidden animate-fade-in-up animation-delay-200">
+              <CardContent className="p-0">
+                <div className="w-full overflow-hidden">
+                  <iframe
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSe9Mvd_nXAd6tiQIzznKIoJANUyoZ19_6_anUKOeRzOTTvJ_Q/viewform?embedded=true"
+                    width="100%"
+                    height="1517"
+                    frameBorder="0"
+                    marginHeight={0}
+                    marginWidth={0}
+                    className="min-h-[800px] w-full"
+                    title="RBF Contact Form"
+                  >
+                    Loading…
+                  </iframe>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* We're Here to Help Section */}
+      <section className="py-16 sm:py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-6xl">
+            <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
               <div className="relative h-64 w-full overflow-hidden rounded-lg sm:h-80 animate-fade-in-up">
                 <Image
                   src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=800&h=600&fit=crop"

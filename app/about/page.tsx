@@ -8,6 +8,60 @@ import {
 } from "@/components/ui/card";
 import { Hero } from "@/components/hero";
 import { Heart, Users, Shield, Handshake } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+interface TeamMember {
+  id: string;
+  name: string;
+  role: string;
+  bio: string;
+  imageUrl: string;
+}
+
+const teamMembers: TeamMember[] = [
+  {
+    id: "1",
+    name: "John Smith",
+    role: "Chairman",
+    bio: "Leading the RBF with dedication and vision, ensuring our mission of support and brotherhood continues to thrive.",
+    imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+  },
+  {
+    id: "2",
+    name: "Michael Johnson",
+    role: "Treasurer",
+    bio: "Managing our funds with transparency and integrity, ensuring every contribution makes a meaningful impact.",
+    imageUrl: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
+  },
+  {
+    id: "3",
+    name: "David Williams",
+    role: "Secretary",
+    bio: "Coordinating our activities and maintaining strong communication within our community of Regentonians.",
+    imageUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
+  },
+  {
+    id: "4",
+    name: "Robert Brown",
+    role: "Welfare Coordinator",
+    bio: "Ensuring that members receive the support they need during difficult times with compassion and care.",
+    imageUrl: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop",
+  },
+  {
+    id: "5",
+    name: "James Davis",
+    role: "Events Organiser",
+    bio: "Bringing our community together through memorable events that strengthen our bonds of brotherhood.",
+    imageUrl: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop",
+  },
+  {
+    id: "6",
+    name: "Thomas Wilson",
+    role: "Communications Officer",
+    bio: "Keeping our members informed and connected, sharing updates and stories from our Regentonian community.",
+    imageUrl: "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=400&h=400&fit=crop",
+  },
+];
 
 export default function AboutPage() {
   return (
@@ -15,10 +69,20 @@ export default function AboutPage() {
       {/* Hero Section */}
       <Hero
         title="About Us"
-        description="Learn about our mission, values, and how we operate"
-        imageUrl="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&h=1080&fit=crop"
+        description={`Welcome to the Regentonians Benevolent Fund, learn about our mission, values, and how we operate`}
+        imageUrl="/heroThree.jpg"
         imageAlt="About the charity mission"
-      />
+        imagePosition="center"
+      >
+        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <Button href="/donate" size="lg">
+            Contribute Now
+          </Button>
+          <Button href="/join" variant="outline" size="lg">
+            How to Join
+          </Button>
+        </div>
+      </Hero>
 
       {/* Mission Section */}
       <section className="py-16 sm:py-20">
@@ -64,7 +128,7 @@ export default function AboutPage() {
                 Who We Support
               </h2>
               <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                The Regentonians Benevolent Fund supports alumni of Sierra Leone
+                The Regentonians Benevolent Fund supports contributing Alumni of Sierra Leone
                 Grammar School. Our members are former students who share a
                 common bond through their educational experience and continue to
                 support one another throughout their lives.
@@ -73,7 +137,7 @@ export default function AboutPage() {
                 We provide assistance to members and their families during times
                 of need, including bereavement support, health and recovery
                 assistance, and milestone celebrations. Our support extends to
-                the broader Regentonian community, recognizing that we are all
+                the broader Regentonian community, recognising that we are all
                 connected through our shared history and values.
               </p>
             </div>
@@ -193,6 +257,54 @@ export default function AboutPage() {
                 </CardContent>
               </Card>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our People Section */}
+      <section className="py-16 sm:py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center mb-12">
+            <h2 className="font-serif text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              Our People
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Meet the dedicated individuals who make the Regentonians Benevolent Fund possible
+            </p>
+          </div>
+          <div className="mx-auto grid max-w-6xl gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {teamMembers.map((member, index) => {
+              const delayClass =
+                index % 3 === 0
+                  ? "animation-delay-200"
+                  : index % 3 === 1
+                    ? "animation-delay-400"
+                    : "animation-delay-600";
+              return (
+                <Card
+                  key={member.id}
+                  className={`overflow-hidden animate-fade-in-up ${delayClass} transition-all duration-300 hover:shadow-lg`}
+                >
+                  <div className="relative h-64 w-full bg-muted">
+                    <Image
+                      src={member.imageUrl}
+                      alt={member.name}
+                      fill
+                      className="object-cover transition-transform duration-300 hover:scale-105"
+                    />
+                  </div>
+                  <CardHeader className="text-center">
+                    <CardTitle className="text-xl">{member.name}</CardTitle>
+                    <CardDescription>{member.role}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="text-center">
+                    <p className="text-sm text-muted-foreground">
+                      {member.bio}
+                    </p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>

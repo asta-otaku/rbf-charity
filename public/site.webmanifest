@@ -1,0 +1,16 @@
+{
+  "name": "The Regentonians Benevolent Fund",
+  "short_name": "RBF Charity",
+  "description": "Compassionate welfare support for alumni of Sierra Leone Grammar School",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#800080",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}

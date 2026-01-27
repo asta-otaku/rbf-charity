@@ -11,9 +11,19 @@ export default function JoinPage() {
       <Hero
         title="How to Join"
         description="Become part of a community dedicated to supporting one another"
-        imageUrl="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1920&h=1080&fit=crop"
+        imageUrl="/heroThree.jpg"
         imageAlt="Join our community"
-      />
+        imagePosition="top"
+      >
+        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <Button href="/donate" size="lg">
+            Contribute Now
+          </Button>
+          <Button href="/contact" variant="outline" size="lg">
+            Contact Us
+          </Button>
+        </div>
+      </Hero>
 
       {/* Who Can Join Section */}
       <section className="py-16 sm:py-20">
@@ -36,30 +46,30 @@ export default function JoinPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-lg leading-8 text-muted-foreground">
-                  The Regentonians Benevolent Fund is open to all alumni of Sierra Leone Grammar School. 
-                  Whether you graduated recently or many years ago, you are welcome to join our community 
+                  The Regentonians Benevolent Fund is open to all alumni of Sierra Leone Grammar School.
+                  Whether you graduated recently or many years ago, you are welcome to join our community
                   of caring individuals committed to supporting one another.
                 </p>
                 <p className="text-lg leading-8 text-muted-foreground">
-                  Membership is open to former students who share our values of care, unity, and 
-                  brotherhood. We believe that the bonds formed at Sierra Leone Grammar School create 
+                  Membership is open to former students who share our values of care, unity, and
+                  brotherhood. We believe that the bonds formed at Sierra Leone Grammar School create
                   a lifelong connection that extends beyond graduation.
                 </p>
                 <div className="mt-6 space-y-3">
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
+                    <CheckCircle className="mt-1 h-5 w-5 shrink-0 text-primary" />
                     <p className="text-muted-foreground">
                       Open to all Sierra Leone Grammar School alumni
                     </p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
+                    <CheckCircle className="mt-1 h-5 w-5 shrink-0 text-primary" />
                     <p className="text-muted-foreground">
                       No membership fees required
                     </p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
+                    <CheckCircle className="mt-1 h-5 w-5 shrink-0 text-primary" />
                     <p className="text-muted-foreground">
                       Voluntary contributions support the fund
                     </p>
@@ -84,39 +94,45 @@ export default function JoinPage() {
               </CardHeader>
               <CardContent className="space-y-6">
                 <p className="text-lg leading-8 text-muted-foreground">
-                  Joining the Regentonians Benevolent Fund is simple. We welcome all alumni who 
+                  Joining the Regentonians Benevolent Fund is simple. We welcome all alumni who
                   wish to be part of our supportive community.
                 </p>
-                
+
                 <div className="space-y-4">
                   <div className="rounded-lg border-l-4 border-primary bg-background p-4">
                     <h3 className="font-semibold text-foreground">Step 1: Contact Us</h3>
                     <p className="mt-2 text-muted-foreground">
-                      Reach out through our contact form or email to express your interest in joining. 
-                      We'll be happy to answer any questions you may have.
+                      Reach out through our contact form or email to express your interest in joining.
+                    </p>
+                    <p className="mt-2 text-sm text-muted-foreground italic">
+                      We'll be happy to answer any questions you may have and guide you through the membership process.
                     </p>
                   </div>
 
                   <div className="rounded-lg border-l-4 border-primary bg-background p-4">
-                    <h3 className="font-semibold text-foreground">Step 2: Share Your Information</h3>
+                    <h3 className="font-semibold text-foreground">Step 2: Compulsory Contribution</h3>
                     <p className="mt-2 text-muted-foreground">
-                      Provide your details including your graduation year and contact information. 
-                      This helps us connect you with the community and keep you informed.
+                      Compulsory Contribution £60 per annum
+                    </p>
+                    <p className="mt-2 text-sm text-muted-foreground italic">
+                      This annual contribution helps sustain the fund and ensures we can provide support to members in need throughout the year.
                     </p>
                   </div>
 
                   <div className="rounded-lg border-l-4 border-primary bg-background p-4">
-                    <h3 className="font-semibold text-foreground">Step 3: Welcome to the Community</h3>
+                    <h3 className="font-semibold text-foreground">Step 3: Voluntary Contribution</h3>
                     <p className="mt-2 text-muted-foreground">
-                      Once you're registered, you'll receive information about upcoming events, 
-                      ways to contribute, and how to access support when needed.
+                      Voluntary Contribution also welcome
+                    </p>
+                    <p className="mt-2 text-sm text-muted-foreground italic">
+                      Additional contributions beyond the annual fee are greatly appreciated and help us extend our support to more members and their families.
                     </p>
                   </div>
                 </div>
 
                 <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                  Membership in the RBF is about more than just joining an organization—it's about 
-                  becoming part of a community that cares for one another. Your participation, whether 
+                  Membership in the RBF is about more than just joining an organization—it's about
+                  becoming part of a community that cares for one another. Your participation, whether
                   through contributions, volunteering, or simply staying connected, makes a difference.
                 </p>
               </CardContent>

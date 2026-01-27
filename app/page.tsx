@@ -17,12 +17,13 @@ export default function Home() {
       <Hero
         title="The Regentonians Benevolent Fund"
         description="Providing compassionate welfare support to alumni of Sierra Leone Grammar School during times of need. Rooted in care, unity, and brotherhood."
-        imageUrl="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1920&h=1080&fit=crop"
+        imageUrl="/heroOne.jpg"
         imageAlt="Community support and unity"
+        imagePosition="center"
       >
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button href="/donate" size="lg">
-            Donate Now
+            Contribute Now
           </Button>
           <Button href="/join" variant="outline" size="lg">
             How to Join
@@ -39,7 +40,7 @@ export default function Home() {
           <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:items-center">
             <div className="relative h-64 w-full overflow-hidden rounded-lg sm:h-80 lg:h-96 animate-fade-in-up">
               <Image
-                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&h=600&fit=crop"
+                src="/whatWeDo.jpeg"
                 alt="Community support and unity"
                 fill
                 className="object-cover transition-transform duration-500 hover:scale-105"
@@ -142,7 +143,7 @@ export default function Home() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Recognizing and celebrating significant milestone birthdays,
+                  Recognising and celebrating significant milestone birthdays,
                   honoring our members and strengthening the bonds of our
                   community.
                 </p>
@@ -169,7 +170,7 @@ export default function Home() {
                 size="lg"
                 className="transition-transform duration-200 hover:scale-105"
               >
-                Donate Now
+                Contribute Now
               </Button>
               <Button
                 href="/join"
