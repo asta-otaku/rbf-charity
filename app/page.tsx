@@ -39,13 +39,13 @@ export default function Home() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:items-center">
             <div className="relative h-64 w-full overflow-hidden rounded-lg sm:h-80 lg:h-96 animate-fade-in-up">
-              <Image
+        <Image
                 src="/whatwedo.jpeg"
                 alt="Community support and unity"
                 fill
                 className="object-cover transition-transform duration-500 hover:scale-105"
-                priority
-              />
+          priority
+        />
             </div>
             <div className="animate-fade-in-up animation-delay-200">
               <h2 className="font-serif text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -127,7 +127,7 @@ export default function Home() {
 
             <Card className="overflow-hidden animate-fade-in-up animation-delay-600 transition-all duration-300 hover:shadow-lg">
               <div className="relative h-48 w-full">
-                <Image
+            <Image
                   src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&h=400&fit=crop"
                   alt="Community celebration"
                   fill

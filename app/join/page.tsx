@@ -81,79 +81,56 @@ export default function JoinPage() {
         </div>
       </section>
 
-      {/* How to Get Involved Section */}
+      {/* Membership Form Section */}
       <section className="bg-muted py-16 sm:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl">
-            <Card>
-              <CardHeader>
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                  <Handshake className="h-6 w-6 text-primary" />
+          <div className="mx-auto max-w-4xl">
+            <div className="text-center mb-8 animate-fade-in-up">
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                <Handshake className="h-6 w-6 text-primary" />
+              </div>
+              <h2 className="font-serif text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                Membership Application
+              </h2>
+              <p className="mt-4 text-lg text-muted-foreground">
+                Fill out the form below to apply for membership in the Regentonians Benevolent Fund.
+              </p>
+            </div>
+            <Card className="animate-fade-in-up animation-delay-200">
+              <CardContent className="p-0">
+                <div className="w-full overflow-auto" style={{ maxHeight: 'none' }}>
+                  <iframe
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSe9Mvd_nXAd6tiQIzznKIoJANUyoZ19_6_anUKOeRzOTTvJ_Q/viewform?embedded=true"
+                    width="100%"
+                    height="1517"
+                    frameBorder="0"
+                    marginHeight={0}
+                    marginWidth={0}
+                    style={{ display: 'block', border: 'none' }}
+                    title="RBF Membership Form"
+                  >
+                    Loading…
+                  </iframe>
                 </div>
-                <CardTitle className="text-3xl">How to Get Involved</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <p className="text-lg leading-8 text-muted-foreground">
-                  Joining the Regentonians Benevolent Fund is simple. We welcome all alumni who
-                  wish to be part of our supportive community.
-                </p>
-
-                <div className="space-y-4">
-                  <div className="rounded-lg border-l-4 border-primary bg-background p-4">
-                    <h3 className="font-semibold text-foreground">Step 1: Contact Us</h3>
-                    <p className="mt-2 text-muted-foreground">
-                      Reach out through our contact form or email to express your interest in joining.
-                    </p>
-                    <p className="mt-2 text-sm text-muted-foreground italic">
-                      We'll be happy to answer any questions you may have and guide you through the membership process.
-                    </p>
-                  </div>
-
-                  <div className="rounded-lg border-l-4 border-primary bg-background p-4">
-                    <h3 className="font-semibold text-foreground">Step 2: Compulsory Contribution</h3>
-                    <p className="mt-2 text-muted-foreground">
-                      Compulsory Contribution £60 per annum
-                    </p>
-                    <p className="mt-2 text-sm text-muted-foreground italic">
-                      This annual contribution helps sustain the fund and ensures we can provide support to members in need throughout the year.
-                    </p>
-                  </div>
-
-                  <div className="rounded-lg border-l-4 border-primary bg-background p-4">
-                    <h3 className="font-semibold text-foreground">Step 3: Voluntary Contribution</h3>
-                    <p className="mt-2 text-muted-foreground">
-                      Voluntary Contribution also welcome
-                    </p>
-                    <p className="mt-2 text-sm text-muted-foreground italic">
-                      Additional contributions beyond the annual fee are greatly appreciated and help us extend our support to more members and their families.
-                    </p>
-                  </div>
-                </div>
-
-                <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                  Membership in the RBF is about more than just joining an organization—it's about
-                  becoming part of a community that cares for one another. Your participation, whether
-                  through contributions, volunteering, or simply staying connected, makes a difference.
-                </p>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Additional Information Section */}
       <section className="py-16 sm:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="font-serif text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Ready to Join?
+              Questions About Membership?
             </h2>
             <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              Get in touch with us today to become part of the Regentonians Benevolent Fund community.
+              If you have any questions about the membership process or need assistance with your application, please don't hesitate to reach out to us.
             </p>
             <div className="mt-10">
               <Button href="/contact" size="lg" className="transition-transform duration-200 hover:scale-105">
-                Contact Us to Join
+                Contact Us
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
