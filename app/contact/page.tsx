@@ -16,13 +16,13 @@ export default function ContactPage() {
       {/* Hero Section */}
       <Hero
         title="Contact Us"
-        description="Get in touch with the Regentonians Benevolent Fund"
+        description="Get in touch with the Regentonians' Benevolent Fund"
         imageUrl="/flagbearer2.jpg"
         imageAlt="Contact us"
         imagePosition="center"
       >
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button href="/donate" size="lg">
+          <Button href="/contribute" size="lg">
             Contribute Now
           </Button>
           <Button href="/join" variant="outline" size="lg">

@@ -34,10 +34,10 @@ export async function POST(req: NextRequest) {
           price_data: {
             currency: currency.toLowerCase(),
             product_data: {
-              name: "RBF Charity Donation",
+              name: "RBF Charity Contribution",
               description: purpose
-                ? `Donation for: ${purpose}`
-                : "Supporting The Regentonians Benevolent Fund",
+                ? `Contribution for: ${purpose}`
+                : "Supporting The Regentonians' Benevolent Fund",
             },
             unit_amount: Math.round(amount * 100), // Convert to pence/cents
           },
@@ -45,8 +45,8 @@ export async function POST(req: NextRequest) {
         },
       ],
       mode: "payment",
-      success_url: `${baseUrl}/donate/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${baseUrl}/donate?canceled=true`,
+      success_url: `${baseUrl}/contribute/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${baseUrl}/contribute?canceled=true`,
       customer_email: undefined, // Let Stripe collect email during checkout
       payment_intent_data: {
         receipt_email: undefined, // Stripe will automatically send receipt

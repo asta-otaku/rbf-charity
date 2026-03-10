@@ -26,18 +26,18 @@ function getEvents(): Event[] {
     {
       _id: "1",
       title: "Thanksgiving",
-      description: "Join us for our annual Thanksgiving celebration, bringing together the Regentonians community in gratitude and fellowship.",
-      date: new Date(2026, 10, 27).toISOString(), // November 27, 2025
-      time: "6:00 PM",
+      description: "Join us for our annual Thanksgiving celebration, bringing together the Regentonians' community in gratitude and fellowship.",
+      date: "22nd March 2026",
+      time: "TBC",
       location: "London, UK",
       imageUrl: "/thanksgiving.jpg",
     },
     {
       _id: "2",
-      title: "All Regentonians Evening (A.R.E)",
-      description: "An exclusive evening for all Regentonians to reconnect, share memories, and strengthen our bonds of brotherhood.",
-      date: new Date(2025, 8, 15).toISOString(), // September 15, 2025
-      time: "7:00 PM",
+      title: "All Regentonians' Evening (A.R.E)",
+      description: "An exclusive evening for all Regentonians' to reconnect, share memories, and strengthen our bonds of brotherhood.",
+      date: "October 26",
+      time: "TBC",
       location: "London, UK",
       imageUrl: "/are.jpeg",
     },
@@ -45,8 +45,8 @@ function getEvents(): Event[] {
       _id: "3",
       title: "End of Year Social Evening",
       description: "Celebrate the year's achievements and look forward to the future at our annual end-of-year social gathering.",
-      date: new Date(2025, 11, 20).toISOString(), // December 20, 2025
-      time: "6:30 PM",
+      date: "December 26",
+      time: "TBC",
       location: "London, UK",
       imageUrl: "/heroThree.JPG",
     },
@@ -54,8 +54,8 @@ function getEvents(): Event[] {
       _id: "4",
       title: "Collaboration",
       description: "A networking and collaboration event focused on building partnerships and supporting community initiatives.",
-      date: new Date(2025, 6, 10).toISOString(), // July 10, 2025
-      time: "2:00 PM",
+      date: "TBC",
+      time: "TBC",
       location: "London, UK",
       imageUrl: "/atTheBar.jpg",
     },
@@ -63,8 +63,8 @@ function getEvents(): Event[] {
       _id: "5",
       title: "RBF Fun at the Park (Bring and Share)",
       description: "A relaxed family-friendly gathering in the park. Bring your favourite dish to share and enjoy games, food, and fellowship.",
-      date: new Date(2025, 7, 15).toISOString(), // August 15, 2025
-      time: "12:00 PM",
+      date: "Summer 2026",
+      time: "TBC",
       location: "London, UK",
       imageUrl: "/heroFour.JPG",
     },
@@ -72,8 +72,8 @@ function getEvents(): Event[] {
       _id: "6",
       title: "Dinner and Dance",
       description: "An elegant evening of fine dining and dancing. Dress to impress and celebrate our community in style.",
-      date: new Date(2025, 9, 5).toISOString(), // October 5, 2025
-      time: "7:30 PM",
+      date: "TBC",
+      time: "TBC",
       location: "London, UK",
       imageUrl: "/atTheBar.jpg",
     },
@@ -81,8 +81,8 @@ function getEvents(): Event[] {
       _id: "7",
       title: "Annual General Meeting",
       description: "Join us for our Annual General Meeting to review the year's activities, discuss future plans, and vote on important matters.",
-      date: new Date(2025, 5, 20).toISOString(), // June 20, 2025
-      time: "3:00 PM",
+      date: "September 2026",
+      time: "TBC",
       location: "London, UK",
       imageUrl: "/are.jpeg",
     },
@@ -90,15 +90,6 @@ function getEvents(): Event[] {
 
   // Limit to 8 events (though we only have 7)
   return dummyEvents.slice(0, 8);
-}
-
-function formatDate(dateString: string): string {
-  const date = new Date(dateString);
-  return date.toLocaleDateString("en-GB", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
 }
 
 export default function EventsPage() {
@@ -118,7 +109,7 @@ export default function EventsPage() {
           <Button href="/join" variant="outline" size="lg">
             How to Join
           </Button>
-          <Button href="/donate" size="lg">
+          <Button href="/contribute" size="lg">
             Contribute Now
           </Button>
         </div>
@@ -163,7 +154,7 @@ export default function EventsPage() {
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
                         <Calendar className="h-4 w-4 text-primary shrink-0" />
                         <span className="font-medium truncate">
-                          {formatDate(event.date)}
+                          {event.date}
                         </span>
                       </div>
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">

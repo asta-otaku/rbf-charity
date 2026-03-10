@@ -42,24 +42,24 @@ export function DonationReceiptEmail({
       <Body style={main}>
         <Container style={container}>
           <Section style={header}>
-            <Heading style={h1}>Thank You for Your Donation</Heading>
-            <Text style={subtitle}>The Regentonians Benevolent Fund</Text>
+            <Heading style={h1}>Thank You for Your Contribution</Heading>
+            <Text style={subtitle}>The Regentonians' Benevolent Fund</Text>
           </Section>
 
           <Section style={content}>
             <Text style={paragraph}>
-              {donorName ? `Dear ${donorName},` : "Dear Donor,"}
+              {donorName ? `Dear ${donorName},` : "Dear Contributor,"}
             </Text>
 
             <Text style={paragraph}>
-              Thank you for your generous donation to The Regentonians
+              Thank you for your generous contribution to The Regentonians'
               Benevolent Fund. Your contribution helps us provide compassionate
               welfare support to alumni of Sierra Leone Grammar School during
               times of need.
             </Text>
 
             <Section style={detailsBox}>
-              <Text style={label}>Donation Details</Text>
+              <Text style={label}>Contribution Details</Text>
               <Text style={value}>
                 <strong>Amount:</strong> {formatAmount(amount, currency)}
               </Text>
@@ -79,9 +79,9 @@ export function DonationReceiptEmail({
             <Hr style={divider} />
 
             <Text style={paragraph}>
-              Your donation is tax-deductible, and we will send you a formal
+              Your contribution is tax-deductible, and we will send you a formal
               receipt for your records. If you have any questions about your
-              donation, please don't hesitate to{" "}
+              contribution, please don't hesitate to{" "}
               <Link href="https://rbf-charity.vercel.app/contact" style={link}>
                 contact us
               </Link>
@@ -89,13 +89,13 @@ export function DonationReceiptEmail({
             </Text>
 
             <Text style={paragraph}>
-              Once again, thank you for your support. Your generosity makes a
+              Once again, thank you for your contribution. Your generosity makes a
               real difference in the lives of our community members.
             </Text>
           </Section>
 
           <Section style={footer}>
-            <Text style={footerText}>The Regentonians Benevolent Fund</Text>
+            <Text style={footerText}>The Regentonians' Benevolent Fund</Text>
             <Text style={footerText}>
               This is an automated receipt. Please keep this email for your
               records.

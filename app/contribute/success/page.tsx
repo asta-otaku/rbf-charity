@@ -172,7 +172,7 @@ function DonateSuccessContent() {
                   Donation Successful
                 </h2>
                 <p className="text-lg text-muted-foreground mb-6">
-                  Thank you for your generous contribution to The Regentonians
+                  Thank you for your generous contribution to The Regentonians'
                   Benevolent Fund. Your support helps us continue providing
                   compassionate welfare assistance to our community.
                 </p>

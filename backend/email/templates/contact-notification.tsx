@@ -31,7 +31,7 @@ export function ContactNotificationEmail({
         <Container style={container}>
           <Section style={header}>
             <Heading style={h1}>New Contact Form Submission</Heading>
-            <Text style={subtitle}>The Regentonians Benevolent Fund</Text>
+            <Text style={subtitle}>The Regentonians' Benevolent Fund</Text>
           </Section>
 
           <Section style={content}>

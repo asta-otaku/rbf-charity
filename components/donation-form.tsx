@@ -41,7 +41,7 @@ export function DonationForm() {
     const donationAmount = amount || parseFloat(customAmount);
 
     if (!donationAmount || donationAmount < 1) {
-      setError("Please enter a valid donation amount (minimum £1)");
+      setError("Please enter a valid contribution amount (minimum £1)");
       setLoading(false);
       return;
     }
@@ -72,7 +72,7 @@ export function DonationForm() {
         throw new Error("No checkout URL received from server");
       }
     } catch (err: any) {
-      console.error("Donation error:", err);
+      console.error("Contribution error:", err);
       setError(err.message || "An error occurred. Please try again.");
       setLoading(false);
     }
@@ -84,7 +84,7 @@ export function DonationForm() {
         <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 mx-auto">
           <Heart className="h-8 w-8 text-primary" />
         </div>
-        <CardTitle className="text-3xl">Make a Donation</CardTitle>
+        <CardTitle className="text-3xl">Make a Contribution</CardTitle>
         <CardDescription className="text-base mt-2">
           Your contribution helps us provide compassionate welfare support to
           alumni of Sierra Leone Grammar School during times of need.
@@ -102,8 +102,8 @@ export function DonationForm() {
                   type="button"
                   onClick={() => handleAmountSelect(suggested)}
                   className={`rounded-md border-2 px-4 py-3 text-sm font-medium transition-all duration-200 ${amount === suggested
-                      ? "border-primary bg-primary text-primary-foreground"
-                      : "border-input bg-background hover:border-primary/50 hover:bg-accent"
+                    ? "border-primary bg-primary text-primary-foreground"
+                    : "border-input bg-background hover:border-primary/50 hover:bg-accent"
                     }`}
                 >
                   £{suggested}
@@ -134,10 +134,10 @@ export function DonationForm() {
             </div>
           </div>
 
-          {/* Donation Purpose (Optional) */}
+          {/* Contribution Purpose (Optional) */}
           <div className="space-y-2">
             <label htmlFor="purpose" className="text-sm font-medium">
-              Donation Purpose (Optional)
+              Contribution Purpose (Optional)
             </label>
             <select
               id="purpose"
@@ -172,13 +172,13 @@ export function DonationForm() {
             ) : (
               <>
                 <Heart className="mr-2 h-4 w-4" />
-                Contribute Now
+                Contribute
               </>
             )}
           </Button>
 
           <p className="text-xs text-center text-muted-foreground">
-            Secure payment powered by Stripe. Your donation is processed safely
+            Secure payment powered by Stripe. Your contribution is processed safely
             and securely.
           </p>
         </form>

@@ -37,7 +37,7 @@ const teamMembers: TeamMember[] = [
     id: "3",
     name: "David Williams",
     role: "Secretary",
-    bio: "Coordinating our activities and maintaining strong communication within our community of Regentonians.",
+    bio: "Coordinating our activities and maintaining strong communication within our community of Regentonians'.",
     imageUrl: "https://ui-avatars.com/api/?name=David+Williams&size=400&background=8B5CF6&color=ffffff&bold=true&font-size=0.5",
   },
   {
@@ -50,7 +50,7 @@ const teamMembers: TeamMember[] = [
   {
     id: "5",
     name: "James Davis",
-    role: "Events Organiser",
+    role: "Events Organizer",
     bio: "Bringing our community together through memorable events that strengthen our bonds of brotherhood.",
     imageUrl: "https://ui-avatars.com/api/?name=James+Davis&size=400&background=A855F7&color=ffffff&bold=true&font-size=0.5",
   },
@@ -69,13 +69,13 @@ export default function AboutPage() {
       {/* Hero Section */}
       <Hero
         title="About Us"
-        description={`Welcome to the Regentonians Benevolent Fund, learn about our mission, values, and how we operate`}
+        description={`Welcome to the Regentonians' Benevolent Fund, learn about our mission, values, and how we operate`}
         imageUrl="/purplefootballteam.jpeg"
         imageAlt="About the charity mission"
         imagePosition="center"
       >
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button href="/donate" size="lg">
+          <Button href="/contribute" size="lg">
             Contribute Now
           </Button>
           <Button href="/join" variant="outline" size="lg">
@@ -90,7 +90,7 @@ export default function AboutPage() {
           <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:items-center">
             <div className="relative h-64 w-full overflow-hidden rounded-lg sm:h-80 lg:h-96 animate-fade-in-up">
               <Image
-                src="/ourMission.jpeg"
+                src="/ourMission.png"
                 alt="Community mission and purpose"
                 fill
                 className="object-cover transition-transform duration-500 hover:scale-105"
@@ -101,7 +101,7 @@ export default function AboutPage() {
                 Our Mission
               </h2>
               <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                The Regentonians Benevolent Fund (RBF) exists to provide
+                The Regentonians' Benevolent Fund (RBF) exists to provide
                 compassionate welfare support to alumni of Sierra Leone Grammar
                 School during times of need. We believe in the power of
                 community, unity, and brotherhood to uplift and support one
@@ -128,7 +128,7 @@ export default function AboutPage() {
                 Who We Support
               </h2>
               <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                The Regentonians Benevolent Fund supports contributing Alumni of Sierra Leone
+                The Regentonians' Benevolent Fund supports contributing Alumni of Sierra Leone
                 Grammar School. Our members are former students who share a
                 common bond through their educational experience and continue to
                 support one another throughout their lives.
@@ -269,7 +269,7 @@ export default function AboutPage() {
               Our People
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Meet the dedicated individuals who make the Regentonians Benevolent Fund possible
+              Meet the dedicated individuals who make the Regentonians' Benevolent Fund possible
             </p>
           </div>
           <div className="mx-auto grid max-w-6xl gap-8 sm:grid-cols-2 lg:grid-cols-3">

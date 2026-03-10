@@ -1,6 +1,6 @@
-# The Regentonians Benevolent Fund (RBF) - Charity Website
+# The Regentonians' Benevolent Fund (RBF) - Charity Website
 
-A clean, professional MVP charity website for The Regentonians Benevolent Fund, providing compassionate welfare support to alumni of Sierra Leone Grammar School.
+A clean, professional MVP charity website for The Regentonians' Benevolent Fund, providing compassionate welfare support to alumni of Sierra Leone Grammar School.
 
 ## 🎯 Project Overview
 
@@ -63,8 +63,8 @@ MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/rbf-charity?retr
 # Resend Email Service (REQUIRED for contact form notifications)
 RESEND_API_KEY=re_your_api_key_here
 EMAIL_FROM=RBF Charity <onboarding@resend.dev>  # Use your domain in production
-EMAIL_TO=admin@theregentoniansbenevolentfund.org
-EMAIL_REPLY_TO=admin@theregentoniansbenevolentfund.org
+EMAIL_TO=admin@theRegentonians'benevolentfund.org
+EMAIL_REPLY_TO=admin@theRegentonians'benevolentfund.org
 
 # Stripe (REQUIRED for donations - see STRIPE_SETUP.md)
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_your_key_here

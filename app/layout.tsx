@@ -22,13 +22,13 @@ const siteUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://rbf-charity.vercel.
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "The Regentonians Benevolent Fund | RBF Charity",
-    template: "%s | The Regentonians Benevolent Fund",
+    default: "The Regentonians' Benevolent Fund | RBF Charity",
+    template: "%s | The Regentonians' Benevolent Fund",
   },
   description:
-    "The Regentonians Benevolent Fund provides compassionate welfare support to alumni of Sierra Leone Grammar School during times of need. Supporting bereavement, illness recovery, and milestone celebrations through community solidarity.",
+    "The Regentonians' Benevolent Fund provides compassionate welfare support to alumni of Sierra Leone Grammar School during times of need. Supporting bereavement, illness recovery, and milestone celebrations through community solidarity.",
   keywords: [
-    "Regentonians Benevolent Fund",
+    "Regentonians' Benevolent Fund",
     "RBF Charity",
     "Sierra Leone Grammar School",
     "alumni support",
@@ -40,14 +40,14 @@ export const metadata: Metadata = {
     "benevolent fund",
     "charitable organization",
     "community support",
-    "donation",
-    "charity donations",
+    "contribution",
+    "charity contributions",
     "alumni network",
     "grammar school alumni",
   ],
-  authors: [{ name: "The Regentonians Benevolent Fund" }],
-  creator: "The Regentonians Benevolent Fund",
-  publisher: "The Regentonians Benevolent Fund",
+  authors: [{ name: "The Regentonians' Benevolent Fund" }],
+  creator: "The Regentonians' Benevolent Fund",
+  publisher: "The Regentonians' Benevolent Fund",
   formatDetection: {
     email: false,
     address: false,
@@ -57,8 +57,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_GB",
     url: siteUrl,
-    siteName: "The Regentonians Benevolent Fund",
-    title: "The Regentonians Benevolent Fund | RBF Charity",
+    siteName: "The Regentonians' Benevolent Fund",
+    title: "The Regentonians' Benevolent Fund | RBF Charity",
     description:
       "Providing compassionate welfare support to alumni of Sierra Leone Grammar School during times of need. Supporting bereavement, illness recovery, and milestone celebrations.",
     images: [
@@ -66,13 +66,13 @@ export const metadata: Metadata = {
         url: "/seo.png", // Update with your actual OG image
         width: 1200,
         height: 630,
-        alt: "The Regentonians Benevolent Fund - Community Support",
+        alt: "The Regentonians' Benevolent Fund - Community Support",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Regentonians Benevolent Fund | RBF Charity",
+    title: "The Regentonians' Benevolent Fund | RBF Charity",
     description:
       "Compassionate welfare support for alumni of Sierra Leone Grammar School during times of need.",
     images: ["/seo.png"], // Update with your actual Twitter image

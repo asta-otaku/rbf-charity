@@ -83,12 +83,12 @@ export async function GET(request: NextRequest) {
                 receipt_sent: "true",
               },
             });
-            console.log("Donation receipt sent successfully");
+            console.log("Contribution receipt sent successfully");
           } else {
-            console.error("Failed to send donation receipt:", emailResult.error);
+            console.error("Failed to send contribution receipt:", emailResult.error);
           }
         } catch (emailError) {
-          console.error("Error sending donation receipt:", emailError);
+          console.error("Error sending contribution receipt:", emailError);
           // Continue anyway - session verification was successful
         }
       }

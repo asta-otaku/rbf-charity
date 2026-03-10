@@ -16,7 +16,7 @@ export default function JoinPage() {
         imagePosition="top"
       >
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button href="/donate" size="lg">
+          <Button href="/contribute" size="lg">
             Contribute Now
           </Button>
           <Button href="/contact" variant="outline" size="lg">
@@ -31,7 +31,7 @@ export default function JoinPage() {
           <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:items-center">
             <div className="relative h-64 w-full overflow-hidden rounded-lg sm:h-80 lg:h-96 animate-fade-in-up">
               <Image
-                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&h=600&fit=crop"
+                src="/ourMission.png"
                 alt="Community membership and joining"
                 fill
                 className="object-cover transition-transform duration-500 hover:scale-105"
@@ -46,7 +46,7 @@ export default function JoinPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-lg leading-8 text-muted-foreground">
-                  The Regentonians Benevolent Fund is open to all alumni of Sierra Leone Grammar School.
+                  The Regentonians' Benevolent Fund is open to all alumni of Sierra Leone Grammar School.
                   Whether you graduated recently or many years ago, you are welcome to join our community
                   of caring individuals committed to supporting one another.
                 </p>
@@ -65,13 +65,13 @@ export default function JoinPage() {
                   <div className="flex items-start gap-3">
                     <CheckCircle className="mt-1 h-5 w-5 shrink-0 text-primary" />
                     <p className="text-muted-foreground">
-                      No membership fees required
+                      Compulsory Contribution of £60 per annum
                     </p>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="mt-1 h-5 w-5 shrink-0 text-primary" />
                     <p className="text-muted-foreground">
-                      Voluntary contributions support the fund
+                      Voluntary Contribution are also welcome
                     </p>
                   </div>
                 </div>
@@ -93,7 +93,7 @@ export default function JoinPage() {
                 Membership Application
               </h2>
               <p className="mt-4 text-lg text-muted-foreground">
-                Fill out the form below to apply for membership in the Regentonians Benevolent Fund.
+                Fill out the form below to apply for membership in the Regentonians' Benevolent Fund.
               </p>
             </div>
             <Card className="animate-fade-in-up animation-delay-200">

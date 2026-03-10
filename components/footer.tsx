@@ -19,7 +19,7 @@ export function Footer() {
               />
             </Link>
             <p className="text-sm text-muted-foreground">
-              The Regentonians Benevolent Fund - Supporting alumni of Sierra
+              The Regentonians' Benevolent Fund - Supporting alumni of Sierra
               Leone Grammar School through care, unity, and brotherhood.
             </p>
           </div>
@@ -77,7 +77,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/donate"
+                  href="/contribute"
                   className="text-muted-foreground hover:text-primary font-medium"
                 >
                   Contribute
@@ -104,7 +104,7 @@ export function Footer() {
 
         <div className="mt-12 border-t border-border pt-8">
           <p className="text-center text-sm text-muted-foreground">
-            © {new Date().getFullYear()} The Regentonians Benevolent Fund. All
+            © {new Date().getFullYear()} The Regentonians' Benevolent Fund. All
             rights reserved.
           </p>
         </div>

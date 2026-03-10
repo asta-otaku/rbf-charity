@@ -95,7 +95,7 @@ export async function sendDonationReceipt({
       from: EMAIL_CONFIG.from,
       to: donorEmail,
       replyTo: EMAIL_CONFIG.to,
-      subject: "Thank You for Your Donation - RBF Charity",
+      subject: "Thank You for Your Contribution - RBF Charity",
       html: emailHtml,
     });
 
@@ -104,10 +104,10 @@ export async function sendDonationReceipt({
       return { success: false, error: error.message };
     }
 
-    console.log("Donation receipt sent successfully:", data?.id);
+    console.log("Contribution receipt sent successfully:", data?.id);
     return { success: true, id: data?.id };
   } catch (error: any) {
-    console.error("Error sending donation receipt:", error);
+    console.error("Error sending contribution receipt:", error);
     return { success: false, error: error.message || "Failed to send email" };
   }
 }

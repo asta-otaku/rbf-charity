@@ -102,7 +102,7 @@ export default function DonatePage() {
                     Get Well Soon
                   </h3>
                   <p className="text-sm text-muted-foreground">
-                    Support fellow Regentonians during illness and recovery.
+                    Support fellow Regentonians' during illness and recovery.
                   </p>
                 </CardContent>
               </Card>
@@ -124,7 +124,7 @@ export default function DonatePage() {
           <Card className="mt-12 bg-muted max-w-2xl mx-auto">
             <CardContent className="pt-6 text-center">
               <p className="text-sm text-muted-foreground">
-                The Regentonians Benevolent Fund is member-funded and
+                The Regentonians' Benevolent Fund is member-funded and
                 transparently managed. Your donation directly supports our
                 community members in times of need.
               </p>
