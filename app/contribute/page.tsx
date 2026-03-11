@@ -66,7 +66,7 @@ export default function DonatePage() {
       <Hero
         title="Support RBF"
         description="Your donation helps us provide compassionate welfare support to alumni of Sierra Leone Grammar School during times of need."
-        imageUrl="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=1920&h=1080&fit=crop"
+        imageUrl="/support.png"
         imageAlt="Support and community"
       />
 

@@ -95,7 +95,7 @@ export async function sendDonationReceipt({
       from: EMAIL_CONFIG.from,
       to: donorEmail,
       replyTo: EMAIL_CONFIG.to,
-      subject: "Thank You for Your Contribution - RBF Charity",
+      subject: "Thank You for Your Contribution - RBF Fund",
       html: emailHtml,
     });
 

@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Hero } from "@/components/hero";
 import { Button } from "@/components/ui/button";
+import { DisclaimerIcon } from "@/components/disclaimer-dialog";
 import { Users, Handshake, ArrowRight, CheckCircle } from "lucide-react";
 
 export default function JoinPage() {
@@ -11,14 +12,17 @@ export default function JoinPage() {
       <Hero
         title="How to Join"
         description="Become part of a community dedicated to supporting one another"
-        imageUrl="/heroThree.JPG"
-        imageAlt="Join our community"
-        imagePosition="top"
+      // imageUrl="/heroThree.JPG"
+      // imageAlt="Join our community"
+      // imagePosition="top"
       >
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button href="/contribute" size="lg">
-            Contribute Now
-          </Button>
+          <span className="inline-flex items-center gap-2">
+            <Button href="/contribute" size="lg">
+              Contribute Now
+            </Button>
+            <DisclaimerIcon />
+          </span>
           <Button href="/contact" variant="outline" size="lg">
             Contact Us
           </Button>

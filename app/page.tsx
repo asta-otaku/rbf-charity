@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { DisclaimerIcon } from "@/components/disclaimer-dialog";
 import {
   Card,
   CardContent,
@@ -8,32 +9,67 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Hero } from "@/components/hero";
 import { Heart, Users, HandHeart, GraduationCap } from "lucide-react";
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
-      {/* Hero Section */}
-      <Hero
-        title="The Regentonians' Benevolent Fund"
-        description="Providing compassionate welfare support to alumni of Sierra Leone Grammar School during times of need. Rooted in care, unity, and brotherhood."
-        imageUrl="/heroOne.JPG"
-        imageAlt="Community support and unity"
-        imagePosition="center"
-      >
-        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button href="/contribute" size="lg">
-            Contribute Now
-          </Button>
-          <Button href="/join" variant="outline" size="lg">
-            How to Join
-          </Button>
-          <Button href="/contact" variant="secondary" size="lg">
-            Contact Us
-          </Button>
+      {/* Hero Section - Logo and copy layout */}
+      <section className="relative bg-background py-16 sm:py-24 md:py-28">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
+          <div className="mx-auto grid w-full max-w-5xl grid-cols-1 items-center gap-10 md:grid-cols-[35%_1fr] md:gap-14">
+            {/* Logo - 35% on large screens */}
+            <div className="flex justify-center animate-fade-in-up md:justify-center">
+              <div className="relative aspect-square h-44 w-44 sm:h-52 sm:w-52 md:h-56 md:w-56 md:max-w-full">
+                <Image
+                  src="/logo.png"
+                  alt="The Regentonians Benevolent Fund"
+                  fill
+                  className="object-contain"
+                  priority
+                  sizes="(max-width: 768px) 224px, 256px"
+                />
+              </div>
+            </div>
+            {/* Text - 65%, centered */}
+            <div className="flex flex-col items-center text-center animate-fade-in-up animation-delay-200">
+              <h1 className="text-2xl font-bold uppercase tracking-tight text-primary sm:text-3xl md:text-4xl">
+                <span className="block">The Regentonians&apos;</span>
+                <span className="mt-1 block">Benevolent Fund</span>
+              </h1>
+              <hr className="my-2 h-px w-[40%] min-w-32 border-0 bg-primary" aria-hidden />
+              <p className="mt-4 max-w-xl text-base leading-7 text-foreground sm:text-lg">
+                Providing compassionate welfare support to alumni of Sierra Leone Grammar School in times of need. Rooted in{" "}
+                <span className="font-semibold text-primary">care</span>,{" "}
+                <span className="font-semibold text-primary">unity</span> and{" "}
+                <span className="font-semibold text-primary">brotherhood</span>.
+              </p>
+              <p className="mt-4 flex items-center justify-center gap-3 text-sm italic text-primary sm:text-base">
+                <span className="h-px w-8 bg-primary/60" aria-hidden />
+                Standing together, caring for one another
+                <span className="h-px w-8 bg-primary/60" aria-hidden />
+              </p>
+            </div>
+          </div>
         </div>
-      </Hero>
+        {/* CTA buttons - below, centered */}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto mt-12 flex max-w-5xl flex-col items-center justify-center gap-4 sm:flex-row animate-fade-in-up animation-delay-400">
+            <span className="inline-flex items-center gap-2">
+              <Button href="/contribute" size="lg" className="transition-transform duration-200 hover:scale-105">
+                Contribute Now
+              </Button>
+              <DisclaimerIcon />
+            </span>
+            <Button href="/join" variant="outline" size="lg" className="transition-transform duration-200 hover:scale-105">
+              How to Join
+            </Button>
+            <Button href="/contact" variant="secondary" size="lg" className="transition-transform duration-200 hover:scale-105">
+              Contact Us
+            </Button>
+          </div>
+        </div>
+      </section>
 
       {/* What We Do Section */}
       <section className="py-20 sm:py-24">
@@ -53,11 +89,10 @@ export default function Home() {
                 What We Do
               </h2>
               <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                The Regentonians' Benevolent Fund (RBF) is a member-funded
-                charity dedicated to supporting alumni of Sierra Leone Grammar
-                School. We provide compassionate assistance during difficult
-                times, celebrating milestones, and fostering a strong sense of
-                community and brotherhood.
+                The Regentonians Benevolent Fund (RBF) is not a registered charity or charitable
+                trust. It is an internal support initiative under the Sierra Leone Grammar School Old
+                Boys’ Association Foundation Trust (UK) for the benefit of its members and related
+                persons.
               </p>
             </div>
           </div>
@@ -201,13 +236,16 @@ export default function Home() {
               lives of fellow Regentonians'.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button
-                href="/contribute"
-                size="lg"
-                className="transition-transform duration-200 hover:scale-105"
-              >
-                Contribute Now
-              </Button>
+              <span className="inline-flex items-center gap-2">
+                <Button
+                  href="/contribute"
+                  size="lg"
+                  className="transition-transform duration-200 hover:scale-105"
+                >
+                  Contribute Now
+                </Button>
+                <DisclaimerIcon />
+              </span>
               <Button
                 href="/join"
                 variant="outline"

@@ -9,6 +9,7 @@ import {
 import { Hero } from "@/components/hero";
 import { Calendar, MapPin, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { DisclaimerIcon } from "@/components/disclaimer-dialog";
 
 interface Event {
   _id: string;
@@ -57,7 +58,7 @@ function getEvents(): Event[] {
       date: "TBC",
       time: "TBC",
       location: "London, UK",
-      imageUrl: "/atTheBar.jpg",
+      imageUrl: "/eventPlaceholder.png",
     },
     {
       _id: "5",
@@ -66,7 +67,7 @@ function getEvents(): Event[] {
       date: "Summer 2026",
       time: "TBC",
       location: "London, UK",
-      imageUrl: "/heroFour.JPG",
+      imageUrl: "/eventPlaceholder.png",
     },
     {
       _id: "6",
@@ -75,7 +76,7 @@ function getEvents(): Event[] {
       date: "TBC",
       time: "TBC",
       location: "London, UK",
-      imageUrl: "/atTheBar.jpg",
+      imageUrl: "/eventPlaceholder.png",
     },
     {
       _id: "7",
@@ -84,7 +85,7 @@ function getEvents(): Event[] {
       date: "September 2026",
       time: "TBC",
       location: "London, UK",
-      imageUrl: "/are.jpeg",
+      imageUrl: "/eventPlaceholder.png",
     },
   ];
 
@@ -101,17 +102,20 @@ export default function EventsPage() {
       <Hero
         title="Events"
         description="Stay connected with our community through events and gatherings"
-        imageUrl="/heroTwo.JPG"
-        imageAlt="Community events"
-        imagePosition="top"
+      // imageUrl="/heroTwo.JPG"
+      // imageAlt="Community events"
+      // imagePosition="top"
       >
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button href="/join" variant="outline" size="lg">
             How to Join
           </Button>
-          <Button href="/contribute" size="lg">
-            Contribute Now
-          </Button>
+          <span className="inline-flex items-center gap-2">
+            <Button href="/contribute" size="lg">
+              Contribute Now
+            </Button>
+            <DisclaimerIcon />
+          </span>
         </div>
       </Hero>
 

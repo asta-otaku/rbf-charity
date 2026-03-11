@@ -11,23 +11,29 @@ interface HeroProps {
 }
 
 export function Hero({ title, description, children, imageUrl, imageAlt, imagePosition = "top" }: HeroProps) {
-  const defaultImageUrl = "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1920&h=1080&fit=crop";
   const defaultAlt = "Community support and unity";
+  const hasImage = Boolean(imageUrl);
 
   return (
-    <section className="relative isolate overflow-hidden bg-gradient-to-b from-primary/20 via-primary/10 to-background py-20 sm:py-32 md:min-h-[500px]">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 -z-10">
-        <Image
-          src={imageUrl || defaultImageUrl}
-          alt={imageAlt || defaultAlt}
-          fill
-          className={`object-cover object-${imagePosition}`}
-          priority
-          quality={90}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background/80" />
-      </div>
+    <section className="relative isolate overflow-hidden py-20 sm:py-32 md:min-h-[500px]">
+      {/* Background */}
+      {hasImage ? (
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src={imageUrl!}
+            alt={imageAlt || defaultAlt}
+            fill
+            className={`object-cover object-${imagePosition}`}
+            priority
+            quality={90}
+          />
+          <div className="absolute inset-0 bg-linear-to-b from-background/80 via-background/60 to-background/80" />
+        </div>
+      ) : (
+        <div className="absolute inset-0 -z-10 bg-primary/5">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--tw-gradient-stops))] from-primary/10 via-primary/5 to-transparent" />
+        </div>
+      )}
 
       {/* Content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">

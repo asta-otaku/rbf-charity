@@ -9,57 +9,63 @@ import {
 import { Hero } from "@/components/hero";
 import { Heart, Users, Shield, Handshake } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { DisclaimerIcon } from "@/components/disclaimer-dialog";
 
 interface TeamMember {
   id: string;
   name: string;
   role: string;
-  bio: string;
   imageUrl: string;
 }
 
 const teamMembers: TeamMember[] = [
   {
     id: "1",
-    name: "John Smith",
-    role: "Chairman",
-    bio: "Leading the RBF with dedication and vision, ensuring our mission of support and brotherhood continues to thrive.",
-    imageUrl: "https://ui-avatars.com/api/?name=John+Smith&size=400&background=6B21A8&color=ffffff&bold=true&font-size=0.5",
+    name: "Rev George Johnson",
+    role: "The Chaplain",
+    imageUrl: "/georgeJohnson.JPG",
   },
   {
     id: "2",
-    name: "Michael Johnson",
-    role: "Treasurer",
-    bio: "Managing our funds with transparency and integrity, ensuring every contribution makes a meaningful impact.",
-    imageUrl: "https://ui-avatars.com/api/?name=Michael+Johnson&size=400&background=7C3AED&color=ffffff&bold=true&font-size=0.5",
+    name: "Winston Sylvah",
+    role: "Clergy",
+    imageUrl: "/winstonSylvah.JPG",
   },
   {
     id: "3",
-    name: "David Williams",
-    role: "Secretary",
-    bio: "Coordinating our activities and maintaining strong communication within our community of Regentonians'.",
-    imageUrl: "https://ui-avatars.com/api/?name=David+Williams&size=400&background=8B5CF6&color=ffffff&bold=true&font-size=0.5",
+    name: "Vidal Williams",
+    role: "Treasurer",
+    imageUrl: "/vidalWillaims.jpeg",
   },
   {
     id: "4",
-    name: "Robert Brown",
-    role: "Welfare Coordinator",
-    bio: "Ensuring that members receive the support they need during difficult times with compassion and care.",
-    imageUrl: "https://ui-avatars.com/api/?name=Robert+Brown&size=400&background=9333EA&color=ffffff&bold=true&font-size=0.5",
+    name: "Paul Parker",
+    role: "Administrator",
+    imageUrl: "/paulParker.jpeg",
   },
   {
     id: "5",
-    name: "James Davis",
-    role: "Events Organizer",
-    bio: "Bringing our community together through memorable events that strengthen our bonds of brotherhood.",
-    imageUrl: "https://ui-avatars.com/api/?name=James+Davis&size=400&background=A855F7&color=ffffff&bold=true&font-size=0.5",
+    name: "Dennis John",
+    role: "Adviser",
+    imageUrl: "/dennisJohn.JPG",
   },
   {
     id: "6",
-    name: "Thomas Wilson",
-    role: "Communications Officer",
-    bio: "Keeping our members informed and connected, sharing updates and stories from our Regentonian community.",
-    imageUrl: "https://ui-avatars.com/api/?name=Thomas+Wilson&size=400&background=6B21A8&color=ffffff&bold=true&font-size=0.5",
+    name: "Ekow Fraser",
+    role: "Adviser",
+    imageUrl: "/ekowFraser.JPG",
+  },
+  {
+    id: "7",
+    name: "Michael Edwin",
+    role: "Adviser",
+    imageUrl: "/michaelEdwin.JPG",
+  },
+  {
+    id: "8",
+    name: "Frank Wellington",
+    role: "Adviser",
+    imageUrl: "/frankWellignton.jpeg",
   },
 ];
 
@@ -70,14 +76,17 @@ export default function AboutPage() {
       <Hero
         title="About Us"
         description={`Welcome to the Regentonians' Benevolent Fund, learn about our mission, values, and how we operate`}
-        imageUrl="/purplefootballteam.jpeg"
-        imageAlt="About the charity mission"
-        imagePosition="center"
+      // imageUrl="/purplefootballteam.jpeg"
+      // imageAlt="About the fund mission"
+      // imagePosition="center"
       >
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button href="/contribute" size="lg">
-            Contribute Now
-          </Button>
+          <span className="inline-flex items-center gap-2">
+            <Button href="/contribute" size="lg">
+              Contribute Now
+            </Button>
+            <DisclaimerIcon />
+          </span>
           <Button href="/join" variant="outline" size="lg">
             How to Join
           </Button>
@@ -283,25 +292,21 @@ export default function AboutPage() {
               return (
                 <Card
                   key={member.id}
-                  className={`overflow-hidden animate-fade-in-up ${delayClass} transition-all duration-300 hover:shadow-lg`}
+                  className={`overflow-hidden animate-fade-in-up ${delayClass} transition-all duration-300 hover:shadow-lg flex flex-col items-center text-center`}
                 >
-                  <div className="relative h-64 w-full bg-muted">
+                  <div className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-full overflow-hidden bg-muted mt-6 shrink-0 ring-2 ring-primary/20">
                     <Image
                       src={member.imageUrl}
                       alt={member.name}
                       fill
-                      className="object-cover transition-transform duration-300 hover:scale-105"
+                      sizes="(max-width: 640px) 192px, 224px"
+                      className="object-cover object-top transition-transform duration-300 hover:scale-105"
                     />
                   </div>
-                  <CardHeader className="text-center">
+                  <CardHeader className="text-center pb-2">
                     <CardTitle className="text-xl">{member.name}</CardTitle>
                     <CardDescription>{member.role}</CardDescription>
                   </CardHeader>
-                  <CardContent className="text-center">
-                    <p className="text-sm text-muted-foreground">
-                      {member.bio}
-                    </p>
-                  </CardContent>
                 </Card>
               );
             })}

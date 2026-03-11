@@ -9,6 +9,7 @@ import {
 import { Hero } from "@/components/hero";
 import { Heart, HandHeart, Cake, GraduationCap, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { DisclaimerIcon } from "@/components/disclaimer-dialog";
 
 export default function SupportPage() {
   return (
@@ -17,8 +18,8 @@ export default function SupportPage() {
       <Hero
         title="Support We Provide"
         description="Three core areas where we offer compassionate assistance to our community"
-        imageUrl="/heroFour.JPG"
-        imageAlt="Support and assistance"
+      // imageUrl="/heroFour.JPG"
+      // imageAlt="Support and assistance"
       >
       </Hero>
 
@@ -234,14 +235,17 @@ export default function SupportPage() {
               hesitate to reach out. We're here to help.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button
-                href="/contribute"
-                size="lg"
-                className="transition-transform duration-200 hover:scale-105"
-              >
-                Contribute Now
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+              <span className="inline-flex items-center gap-2">
+                <Button
+                  href="/contribute"
+                  size="lg"
+                  className="transition-transform duration-200 hover:scale-105"
+                >
+                  Contribute Now
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+                <DisclaimerIcon />
+              </span>
               <Button
                 href="/contact"
                 variant="outline"

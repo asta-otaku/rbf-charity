@@ -1,6 +1,6 @@
-# The Regentonians' Benevolent Fund (RBF) - Charity Website
+# The Regentonians' Benevolent Fund (RBF) - Fund Website
 
-A clean, professional MVP charity website for The Regentonians' Benevolent Fund, providing compassionate welfare support to alumni of Sierra Leone Grammar School.
+A clean, professional MVP fund website for The Regentonians' Benevolent Fund, providing compassionate welfare support to alumni of Sierra Leone Grammar School.
 
 ## 🎯 Project Overview
 

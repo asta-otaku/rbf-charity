@@ -64,8 +64,8 @@ export default function SignInPage() {
       <Hero
         title="Admin Sign In"
         description="Access the admin dashboard to manage events and content"
-        imageUrl="/heroFive.JPG"
-        imageAlt="Admin access"
+      // imageUrl="/heroFive.JPG"
+      // imageAlt="Admin access"
       />
 
       <section className="py-16 sm:py-20">

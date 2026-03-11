@@ -36,6 +36,8 @@ export function DonationReceiptEmail({
     return formatter.format(amount / 100);
   };
 
+  const publicUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://theregentoniansbenevolentfund.org";
+
   return (
     <Html>
       <Head />
@@ -82,7 +84,7 @@ export function DonationReceiptEmail({
               Your contribution is tax-deductible, and we will send you a formal
               receipt for your records. If you have any questions about your
               contribution, please don't hesitate to{" "}
-              <Link href="https://rbf-charity.vercel.app/contact" style={link}>
+              <Link href={`${publicUrl}/contact`} style={link}>
                 contact us
               </Link>
               .

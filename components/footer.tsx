@@ -1,5 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
+import { Info } from "lucide-react";
+import { DisclaimerIcon } from "@/components/disclaimer-dialog";
 
 export function Footer() {
   return (
@@ -102,9 +107,31 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-border pt-8">
+        {/* Disclaimer */}
+        <div className="mt-8 border-t border-border pt-8">
+          <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex items-center gap-2">
+              <h4 className="text-sm font-semibold text-foreground">Disclaimer</h4>
+              <DisclaimerIcon />
+            </div>
+            <p className="max-w-2xl text-xs leading-relaxed text-muted-foreground">
+              The RBF is not a registered charity. It is an internal support initiative under the
+              Sierra Leone Grammar School Old Boys&apos; Association Foundation Trust (UK).
+              Contributions do not qualify for tax relief.{" "}
+              <button
+                type="button"
+                className="inline text-primary underline underline-offset-2 hover:text-primary/80 transition-colors"
+                onClick={() => document.querySelector<HTMLButtonElement>('[aria-label="View contribution disclaimer"]')?.click()}
+              >
+                Read full disclaimer
+              </button>
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-6 border-t border-border pt-6">
           <p className="text-center text-sm text-muted-foreground">
-            © {new Date().getFullYear()} The Regentonians' Benevolent Fund. All
+            © {new Date().getFullYear()} The Regentonians&apos; Benevolent Fund. All
             rights reserved.
           </p>
         </div>

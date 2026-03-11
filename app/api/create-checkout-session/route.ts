@@ -34,7 +34,7 @@ export async function POST(req: NextRequest) {
           price_data: {
             currency: currency.toLowerCase(),
             product_data: {
-              name: "RBF Charity Contribution",
+              name: "RBF Fund Contribution",
               description: purpose
                 ? `Contribution for: ${purpose}`
                 : "Supporting The Regentonians' Benevolent Fund",

@@ -65,7 +65,7 @@ export function ContactNotificationEmail({
 
           <Section style={footer}>
             <Text style={footerText}>
-              This email was sent from the RBF Charity website contact form.
+              This email was sent from the RBF Fund website contact form.
             </Text>
             <Text style={footerText}>
               Please respond directly to {email} to reply to this inquiry.

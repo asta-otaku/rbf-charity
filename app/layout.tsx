@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
+import { DisclaimerFloatingButton } from "@/components/disclaimer-dialog";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -22,26 +23,25 @@ const siteUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://rbf-charity.vercel.
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "The Regentonians' Benevolent Fund | RBF Charity",
+    default: "The Regentonians' Benevolent Fund | RBF Fund",
     template: "%s | The Regentonians' Benevolent Fund",
   },
   description:
     "The Regentonians' Benevolent Fund provides compassionate welfare support to alumni of Sierra Leone Grammar School during times of need. Supporting bereavement, illness recovery, and milestone celebrations through community solidarity.",
   keywords: [
     "Regentonians' Benevolent Fund",
-    "RBF Charity",
+    "RBF Fund",
     "Sierra Leone Grammar School",
     "alumni support",
-    "charity organization",
+    "fund organization",
     "welfare support",
     "bereavement support",
-    "community charity",
+    "community fund",
     "Sierra Leone alumni",
     "benevolent fund",
-    "charitable organization",
     "community support",
     "contribution",
-    "charity contributions",
+    "fund contributions",
     "alumni network",
     "grammar school alumni",
   ],
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     locale: "en_GB",
     url: siteUrl,
     siteName: "The Regentonians' Benevolent Fund",
-    title: "The Regentonians' Benevolent Fund | RBF Charity",
+    title: "The Regentonians' Benevolent Fund | RBF Fund",
     description:
       "Providing compassionate welfare support to alumni of Sierra Leone Grammar School during times of need. Supporting bereavement, illness recovery, and milestone celebrations.",
     images: [
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Regentonians' Benevolent Fund | RBF Charity",
+    title: "The Regentonians' Benevolent Fund | RBF Fund",
     description:
       "Compassionate welfare support for alumni of Sierra Leone Grammar School during times of need.",
     images: ["/seo.png"], // Update with your actual Twitter image
@@ -102,12 +102,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteUrl,
   },
-  category: "charity",
-  classification: "Charitable Organization",
+  category: "fund",
+  classification: "Fund Organization",
   other: {
     "apple-mobile-web-app-capable": "yes",
     "apple-mobile-web-app-status-bar-style": "default",
-    "apple-mobile-web-app-title": "RBF Charity",
+    "apple-mobile-web-app-title": "RBF Fund",
     "mobile-web-app-capable": "yes",
     "theme-color": "#800080",
   },
@@ -138,6 +138,7 @@ export default function RootLayout({
           <Navigation />
           <main className="flex-1">{children}</main>
           <Footer />
+          <DisclaimerFloatingButton />
         </div>
       </body>
     </html>

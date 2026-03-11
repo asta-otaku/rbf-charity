@@ -9,6 +9,7 @@ import { Hero } from "@/components/hero";
 import { Mail, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ContactForm } from "@/components/contact-form";
+import { DisclaimerIcon } from "@/components/disclaimer-dialog";
 
 export default function ContactPage() {
   return (
@@ -17,14 +18,17 @@ export default function ContactPage() {
       <Hero
         title="Contact Us"
         description="Get in touch with the Regentonians' Benevolent Fund"
-        imageUrl="/flagbearer2.jpg"
-        imageAlt="Contact us"
-        imagePosition="center"
+      // imageUrl="/flagbearer2.jpg"
+      // imageAlt="Contact us"
+      // imagePosition="center"
       >
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button href="/contribute" size="lg">
-            Contribute Now
-          </Button>
+          <span className="inline-flex items-center gap-2">
+            <Button href="/contribute" size="lg">
+              Contribute Now
+            </Button>
+            <DisclaimerIcon />
+          </span>
           <Button href="/join" variant="outline" size="lg">
             How to Join
           </Button>
