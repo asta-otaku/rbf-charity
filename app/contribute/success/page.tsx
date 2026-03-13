@@ -78,7 +78,7 @@ function DonateSuccessContent() {
       <div className="flex min-h-screen flex-col">
         <Hero
           title="Processing..."
-          description="Verifying your donation"
+          description="Verifying your contribution"
           imageUrl="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1920&h=1080&fit=crop"
           imageAlt="Processing"
         />
@@ -155,7 +155,7 @@ function DonateSuccessContent() {
     <div className="flex min-h-screen flex-col">
       <Hero
         title="Thank You!"
-        description="Your donation has been received. We're grateful for your support."
+        description="Your contribution has been received. We're grateful for your support."
         imageUrl="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1920&h=1080&fit=crop"
         imageAlt="Thank you"
       />
@@ -169,7 +169,7 @@ function DonateSuccessContent() {
                   <CheckCircle className="h-12 w-12 text-green-600" />
                 </div>
                 <h2 className="font-serif text-3xl font-bold tracking-tight text-foreground mb-4">
-                  Donation Successful
+                  Contribution Successful
                 </h2>
                 <p className="text-lg text-muted-foreground mb-6">
                   Thank you for your generous contribution to The Regentonians'
@@ -179,7 +179,7 @@ function DonateSuccessContent() {
 
                 {/* Donation Details */}
                 <div className="mb-8 rounded-lg bg-muted p-6 text-left">
-                  <h3 className="font-semibold mb-4">Donation Details</h3>
+                  <h3 className="font-semibold mb-4">Contribution Details</h3>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
                       <span className="text-muted-foreground">Amount:</span>
@@ -264,7 +264,7 @@ export default function DonateSuccessPage() {
         <div className="flex min-h-screen flex-col">
           <Hero
             title="Processing..."
-            description="Verifying your donation"
+            description="Verifying your contribution"
             imageUrl="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1920&h=1080&fit=crop"
             imageAlt="Processing"
           />

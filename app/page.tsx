@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { Hero } from "@/components/hero";
 import { DisclaimerIcon } from "@/components/disclaimer-dialog";
 import {
   Card,
@@ -14,62 +15,40 @@ import { Heart, Users, HandHeart, GraduationCap } from "lucide-react";
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
-      {/* Hero Section - Logo and copy layout */}
-      <section className="relative bg-background py-16 sm:py-24 md:py-28">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
-          <div className="mx-auto grid w-full max-w-5xl grid-cols-1 items-center gap-10 md:grid-cols-[35%_1fr] md:gap-14">
-            {/* Logo - 35% on large screens */}
-            <div className="flex justify-center animate-fade-in-up md:justify-center">
-              <div className="relative aspect-square h-44 w-44 sm:h-52 sm:w-52 md:h-56 md:w-56 md:max-w-full">
-                <Image
-                  src="/logo.png"
-                  alt="The Regentonians Benevolent Fund"
-                  fill
-                  className="object-contain"
-                  priority
-                  sizes="(max-width: 768px) 224px, 256px"
-                />
-              </div>
-            </div>
-            {/* Text - 65%, centered */}
-            <div className="flex flex-col items-center text-center animate-fade-in-up animation-delay-200">
-              <h1 className="text-2xl font-bold uppercase tracking-tight text-primary sm:text-3xl md:text-4xl">
-                <span className="block">The Regentonians&apos;</span>
-                <span className="mt-1 block">Benevolent Fund</span>
-              </h1>
-              <hr className="my-2 h-px w-[40%] min-w-32 border-0 bg-primary" aria-hidden />
-              <p className="mt-4 max-w-xl text-base leading-7 text-foreground sm:text-lg">
-                Providing compassionate welfare support to alumni of Sierra Leone Grammar School in times of need. Rooted in{" "}
-                <span className="font-semibold text-primary">care</span>,{" "}
-                <span className="font-semibold text-primary">unity</span> and{" "}
-                <span className="font-semibold text-primary">brotherhood</span>.
-              </p>
-              <p className="mt-4 flex items-center justify-center gap-3 text-sm italic text-primary sm:text-base">
-                <span className="h-px w-8 bg-primary/60" aria-hidden />
-                Standing together, caring for one another
-                <span className="h-px w-8 bg-primary/60" aria-hidden />
-              </p>
-            </div>
-          </div>
+      {/* Hero Section */}
+      <Hero
+        title="The Regentonians' Benevolent Fund"
+      // imageUrl="/heroOne.JPG"
+      // imageAlt="Community support and unity"
+      // imagePosition="center"
+      >
+        <div className="space-y-2">
+          <p className="text-lg leading-7 text-foreground/90 sm:text-xl">
+            Providing compassionate welfare support to alumni of Sierra Leone Grammar School in times of need.
+            Rooted in <span className="font-semibold">care</span>, <span className="font-semibold">unity</span> and{" "}
+            <span className="font-semibold">brotherhood</span>.
+          </p>
+          <p className="flex items-center justify-center gap-3 text-sm italic text-foreground/70 sm:text-base">
+            <span className="h-px w-8 bg-foreground/40" aria-hidden />
+            Standing together, caring for one another
+            <span className="h-px w-8 bg-foreground/40" aria-hidden />
+          </p>
         </div>
-        {/* CTA buttons - below, centered */}
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto mt-12 flex max-w-5xl flex-col items-center justify-center gap-4 sm:flex-row animate-fade-in-up animation-delay-400">
-            <span className="inline-flex items-center gap-2">
-              <Button href="/contribute" size="lg" className="transition-transform duration-200 hover:scale-105">
-                Contribute Now
-              </Button>
-              <DisclaimerIcon />
-            </span>
-            <Button href="/join" variant="outline" size="lg" className="transition-transform duration-200 hover:scale-105">
-              How to Join
+        <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <span className="inline-flex items-center gap-2">
+            <DisclaimerIcon />
+            <Button href="/contribute" size="lg" className="transition-transform duration-200 hover:scale-105">
+              Contribute Now
             </Button>
-            <Button href="/contact" variant="secondary" size="lg" className="transition-transform duration-200 hover:scale-105">
-              Contact Us
-            </Button>
-          </div>
+          </span>
+          <Button href="/join" variant="outline" size="lg" className="transition-transform duration-200 hover:scale-105">
+            How to Join
+          </Button>
+          <Button href="/contact" variant="secondary" size="lg" className="transition-transform duration-200 hover:scale-105">
+            Contact Us
+          </Button>
         </div>
-      </section>
+      </Hero>
 
       {/* What We Do Section */}
       <section className="py-20 sm:py-24">
@@ -89,8 +68,12 @@ export default function Home() {
                 What We Do
               </h2>
               <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                The Regentonians Benevolent Fund (RBF) is not a registered charity or charitable
-                trust. It is an internal support initiative under the Sierra Leone Grammar School Old
+                The Regentonians' Benevolent Fund (RBF) is a member-funded
+                charity dedicated to supporting alumni of Sierra Leone Grammar
+                School. We provide compassionate assistance during difficult
+                times, celebrating milestones, and fostering a strong sense of
+                community and brotherhood. <br /> It is not a registered charity or charitable
+                trust, it is an internal support initiative under the Sierra Leone Grammar School Old
                 Boys’ Association Foundation Trust (UK) for the benefit of its members and related
                 persons.
               </p>
@@ -110,27 +93,27 @@ export default function Home() {
               Our support is delivered through three core pillars
             </p>
           </div>
-          <div className="mx-auto mt-16 grid max-w-screen-2xl gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            <Link href="/support#bereavement-support" className="block">
-              <Card className="group overflow-hidden animate-fade-in-up animation-delay-200 flex flex-col transition-all duration-300 hover:shadow-xl h-full cursor-pointer">
-                <div className="relative aspect-3/4 w-full min-h-[280px] sm:min-h-[320px]">
+          <div className="mx-auto mt-16 grid max-w-7xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <Link href="/support#bereavement-support" className="block h-full">
+              <Card className="group border-2 overflow-hidden animate-fade-in-up animation-delay-200 flex flex-col transition-all duration-300 hover:shadow-lg h-full cursor-pointer">
+                <div className="relative h-48 w-full overflow-hidden">
                   <Image
                     src="/bereavementsupport.jpeg"
                     alt="Bereavement support and compassion"
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
-                <CardHeader className="flex-1 flex flex-col">
+                <CardHeader className="flex-1">
                   <div className="mb-3 flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary/10">
                     <Heart className="h-5 w-5 text-primary" />
                   </div>
                   <CardTitle className="text-xl">Bereavement Support</CardTitle>
-                  <CardDescription>"Cry Berrin"</CardDescription>
+                  <CardDescription className="mt-2">&ldquo;Cry Berrin&rdquo;</CardDescription>
                 </CardHeader>
-                <CardContent className="pt-0">
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                <CardContent className="space-y-2">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     Providing compassionate support and financial assistance to
                     families during times of loss, helping them navigate difficult
                     periods with dignity and care.
@@ -139,26 +122,26 @@ export default function Home() {
               </Card>
             </Link>
 
-            <Link href="/support#get-well-soon-support" className="block">
-              <Card className="group overflow-hidden animate-fade-in-up animation-delay-400 flex flex-col transition-all duration-300 hover:shadow-xl h-full cursor-pointer">
-                <div className="relative aspect-3/4 w-full min-h-[280px] sm:min-h-[320px]">
+            <Link href="/support#get-well-soon-support" className="block h-full">
+              <Card className="group border-2 overflow-hidden animate-fade-in-up animation-delay-400 flex flex-col transition-all duration-300 hover:shadow-lg h-full cursor-pointer">
+                <div className="relative h-48 w-full overflow-hidden">
                   <Image
                     src="/newgetwellsoon.jpeg"
                     alt="Health and recovery support"
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
-                <CardHeader className="flex-1 flex flex-col">
+                <CardHeader className="flex-1">
                   <div className="mb-3 flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary/10">
                     <HandHeart className="h-5 w-5 text-primary" />
                   </div>
                   <CardTitle className="text-xl">Get Well Soon Support</CardTitle>
-                  <CardDescription>Health & Recovery</CardDescription>
+                  <CardDescription className="mt-2">Health &amp; Recovery</CardDescription>
                 </CardHeader>
-                <CardContent className="pt-0">
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                <CardContent className="space-y-2">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     Offering support and encouragement to members during illness
                     or recovery, ensuring they know they are not alone in their
                     journey back to health.
@@ -167,26 +150,26 @@ export default function Home() {
               </Card>
             </Link>
 
-            <Link href="/support#milestone-birthdays" className="block">
-              <Card className="group overflow-hidden animate-fade-in-up animation-delay-600 flex flex-col transition-all duration-300 hover:shadow-xl h-full cursor-pointer">
-                <div className="relative aspect-3/4 w-full min-h-[280px] sm:min-h-[320px]">
+            <Link href="/support#milestone-birthdays" className="block h-full">
+              <Card className="group border-2 overflow-hidden animate-fade-in-up animation-delay-600 flex flex-col transition-all duration-300 hover:shadow-lg h-full cursor-pointer">
+                <div className="relative h-48 w-full overflow-hidden">
                   <Image
                     src="/birthdayMilestone.jpeg"
                     alt="Community celebration"
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
-                <CardHeader className="flex-1 flex flex-col">
+                <CardHeader className="flex-1">
                   <div className="mb-3 flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary/10">
                     <Users className="h-5 w-5 text-primary" />
                   </div>
                   <CardTitle className="text-xl">Milestone Birthdays</CardTitle>
-                  <CardDescription>Celebrating Together</CardDescription>
+                  <CardDescription className="mt-2">Celebrating Together</CardDescription>
                 </CardHeader>
-                <CardContent className="pt-0">
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                <CardContent className="space-y-2">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     Recognising and celebrating significant milestone birthdays,
                     honouring our members and strengthening the bonds of our
                     community.
@@ -195,27 +178,27 @@ export default function Home() {
               </Card>
             </Link>
 
-            <Link href="/support#mentoring-scheme" className="block">
-              <Card className="group overflow-hidden animate-fade-in-up animation-delay-600 flex flex-col transition-all duration-300 hover:shadow-xl h-full cursor-pointer">
-                <div className="relative aspect-3/4 w-full min-h-[280px] sm:min-h-[320px]">
+            <Link href="/support#mentoring-scheme" className="block h-full">
+              <Card className="group border-2 overflow-hidden animate-fade-in-up animation-delay-600 flex flex-col transition-all duration-300 hover:shadow-lg h-full cursor-pointer">
+                <div className="relative h-48 w-full overflow-hidden">
                   <Image
                     src="/mentoringMission.png"
                     alt="Mentoring and mission support"
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
-                <CardHeader className="flex-1 flex flex-col">
+                <CardHeader className="flex-1">
                   <div className="mb-3 flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary/10">
                     <GraduationCap className="h-5 w-5 text-primary" />
                   </div>
                   <CardTitle className="text-xl">Mission: Mentoring Scheme</CardTitle>
-                  <CardDescription>Personal & Professional Growth</CardDescription>
+                  <CardDescription className="mt-2">Personal &amp; Professional Growth</CardDescription>
                 </CardHeader>
-                <CardContent className="pt-0">
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    Our mentoring scheme supports members' personal and professional development by connecting them with peers for guidance and shared experience.
+                <CardContent className="space-y-2">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Our mentoring scheme supports members&apos; personal and professional development by connecting them with peers for guidance and shared experience.
                   </p>
                 </CardContent>
               </Card>
@@ -237,6 +220,7 @@ export default function Home() {
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <span className="inline-flex items-center gap-2">
+                <DisclaimerIcon />
                 <Button
                   href="/contribute"
                   size="lg"
@@ -244,7 +228,6 @@ export default function Home() {
                 >
                   Contribute Now
                 </Button>
-                <DisclaimerIcon />
               </span>
               <Button
                 href="/join"

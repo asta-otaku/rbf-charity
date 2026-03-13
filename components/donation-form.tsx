@@ -149,6 +149,7 @@ export function DonationForm() {
               <option value="Bereavement Support">Bereavement Support</option>
               <option value="Get Well Soon">Get Well Soon</option>
               <option value="Milestone Birthday">Milestone Birthday</option>
+              <option value="Mentoring Scheme">Mentoring Scheme</option>
             </select>
           </div>
 

@@ -1,9 +1,10 @@
 import Image from "next/image";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Hero } from "@/components/hero";
 import { Button } from "@/components/ui/button";
 import { DisclaimerIcon } from "@/components/disclaimer-dialog";
-import { Users, Handshake, ArrowRight, CheckCircle } from "lucide-react";
+import { MembershipFormModal } from "@/components/membership-form-modal";
+import { Users, ArrowRight, CheckCircle } from "lucide-react";
 
 export default function JoinPage() {
   return (
@@ -18,10 +19,10 @@ export default function JoinPage() {
       >
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <span className="inline-flex items-center gap-2">
+            <DisclaimerIcon />
             <Button href="/contribute" size="lg">
               Contribute Now
             </Button>
-            <DisclaimerIcon />
           </span>
           <Button href="/contact" variant="outline" size="lg">
             Contact Us
@@ -85,56 +86,20 @@ export default function JoinPage() {
         </div>
       </section>
 
-      {/* Membership Form Section */}
+      {/* Apply Section */}
       <section className="bg-muted py-16 sm:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl">
-            <div className="text-center mb-8 animate-fade-in-up">
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                <Handshake className="h-6 w-6 text-primary" />
-              </div>
-              <h2 className="font-serif text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                Membership Application
-              </h2>
-              <p className="mt-4 text-lg text-muted-foreground">
-                Fill out the form below to apply for membership in the Regentonians' Benevolent Fund.
-              </p>
-            </div>
-            <Card className="animate-fade-in-up animation-delay-200">
-              <CardContent className="p-0">
-                <div className="w-full overflow-auto" style={{ maxHeight: 'none' }}>
-                  <iframe
-                    src="https://docs.google.com/forms/d/e/1FAIpQLSe9Mvd_nXAd6tiQIzznKIoJANUyoZ19_6_anUKOeRzOTTvJ_Q/viewform?embedded=true"
-                    width="100%"
-                    height="1517"
-                    frameBorder="0"
-                    marginHeight={0}
-                    marginWidth={0}
-                    style={{ display: 'block', border: 'none' }}
-                    title="RBF Membership Form"
-                  >
-                    Loading…
-                  </iframe>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Additional Information Section */}
-      <section className="py-16 sm:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
+          <div className="mx-auto max-w-2xl text-center animate-fade-in-up">
             <h2 className="font-serif text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Questions About Membership?
+              Ready to Join?
             </h2>
-            <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              If you have any questions about the membership process or need assistance with your application, please don't hesitate to reach out to us.
+            <p className="mt-4 text-lg text-muted-foreground">
+              Complete our short membership application form to become part of the Regentonians&apos; Benevolent Fund community.
             </p>
-            <div className="mt-10">
-              <Button href="/contact" size="lg" className="transition-transform duration-200 hover:scale-105">
-                Contact Us
+            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <MembershipFormModal />
+              <Button href="/contact" variant="outline" size="lg" className="transition-transform duration-200 hover:scale-105">
+                Questions? Contact Us
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>

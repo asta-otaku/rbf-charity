@@ -236,6 +236,7 @@ export default function SupportPage() {
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <span className="inline-flex items-center gap-2">
+                <DisclaimerIcon />
                 <Button
                   href="/contribute"
                   size="lg"
@@ -244,7 +245,6 @@ export default function SupportPage() {
                   Contribute Now
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
-                <DisclaimerIcon />
               </span>
               <Button
                 href="/contact"

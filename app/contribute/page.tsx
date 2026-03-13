@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { Hero } from "@/components/hero";
 import { DonationForm } from "@/components/donation-form";
 import { Card, CardContent } from "@/components/ui/card";
-import { Heart, Shield, CheckCircle, XCircle } from "lucide-react";
+import { Heart, Shield, CheckCircle, XCircle, GraduationCap } from "lucide-react";
 
 function CanceledMessage() {
   const searchParams = useSearchParams();
@@ -65,7 +65,7 @@ export default function DonatePage() {
     <div className="flex min-h-screen flex-col">
       <Hero
         title="Support RBF"
-        description="Your donation helps us provide compassionate welfare support to alumni of Sierra Leone Grammar School during times of need."
+        description="Your contribution helps us provide compassionate welfare support to alumni of Sierra Leone Grammar School during times of need."
         imageUrl="/support.png"
         imageAlt="Support and community"
       />
@@ -78,11 +78,11 @@ export default function DonatePage() {
           <DonationForm />
 
           {/* Why Donate Section */}
-          <div className="mt-16 mx-auto max-w-4xl">
+          <div className="mt-16 mx-auto max-w-screen-2xl">
             <h2 className="font-serif text-3xl font-bold tracking-tight text-center text-foreground sm:text-4xl mb-12">
-              Why Your Donation Matters
+              Why Your Contribution Matters
             </h2>
-            <div className="grid gap-6 sm:grid-cols-3">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               <Card className="animate-fade-in-up animation-delay-200">
                 <CardContent className="pt-6 text-center">
                   <Heart className="h-8 w-8 text-primary mx-auto mb-4" />
@@ -117,6 +117,17 @@ export default function DonatePage() {
                   </p>
                 </CardContent>
               </Card>
+              <Card className="animate-fade-in-up animation-delay-600">
+                <CardContent className="pt-6 text-center">
+                  <GraduationCap className="h-8 w-8 text-primary mx-auto mb-4" />
+                  <h3 className="font-serif text-xl font-semibold mb-2">
+                    Mentoring Scheme
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    Support our members' personal and professional development.
+                  </p>
+                </CardContent>
+              </Card>
             </div>
           </div>
 
@@ -125,7 +136,7 @@ export default function DonatePage() {
             <CardContent className="pt-6 text-center">
               <p className="text-sm text-muted-foreground">
                 The Regentonians' Benevolent Fund is member-funded and
-                transparently managed. Your donation directly supports our
+                transparently managed. Your contribution directly supports our
                 community members in times of need.
               </p>
             </CardContent>

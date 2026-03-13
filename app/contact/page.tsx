@@ -24,10 +24,10 @@ export default function ContactPage() {
       >
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <span className="inline-flex items-center gap-2">
+            <DisclaimerIcon />
             <Button href="/contribute" size="lg">
               Contribute Now
             </Button>
-            <DisclaimerIcon />
           </span>
           <Button href="/join" variant="outline" size="lg">
             How to Join

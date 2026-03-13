@@ -97,9 +97,9 @@ export function DisclaimerIcon({ className = "" }: { className?: string }) {
           e.stopPropagation();
           setOpen(true);
         }}
-        className={`inline-flex items-center justify-center rounded-full w-5 h-5 border border-primary/50 text-primary hover:bg-primary/10 transition-colors ${className}`}
+        className={`inline-flex items-center justify-center rounded-full w-5 h-5 text-primary transition-colors ${className}`}
       >
-        <Info className="h-3 w-3" />
+        <Info className="h-5 w-5" />
       </button>
       <DisclaimerModal open={open} onOpenChange={setOpen} />
     </>
