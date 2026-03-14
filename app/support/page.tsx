@@ -21,6 +21,17 @@ export default function SupportPage() {
       // imageUrl="/heroFour.JPG"
       // imageAlt="Support and assistance"
       >
+        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <span className="inline-flex items-center gap-2">
+            <DisclaimerIcon />
+            <Button href="/contribute" size="lg">
+              Contribute Now
+            </Button>
+          </span>
+          <Button href="/join" variant="outline" size="lg">
+            How to Join
+          </Button>
+        </div>
       </Hero>
 
       {/* Support Areas */}
