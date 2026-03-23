@@ -41,9 +41,9 @@ export default function SupportPage() {
             {/* Bereavement Support */}
             <div id="bereavement-support" className="scroll-mt-24">
               <Card className="border-2 overflow-hidden animate-fade-in-up transition-all duration-300 hover:shadow-lg">
-                <div className="relative h-80 w-full">
+                <div className="relative w-full" style={{ aspectRatio: '6/1' }}>
                   <Image
-                    src="/bereavementsupport.jpeg"
+                    src="/lossBanner.png"
                     alt="Bereavement support and compassion"
                     fill
                     className="object-cover transition-transform duration-300 hover:scale-105"
@@ -92,9 +92,9 @@ export default function SupportPage() {
 
               {/* Get Well Soon Support */}
               <Card className="border-2 overflow-hidden animate-fade-in-up animation-delay-200 transition-all duration-300 hover:shadow-lg">
-                <div className="relative h-80 w-full">
+                <div className="relative w-full" style={{ aspectRatio: '6/1' }}>
                   <Image
-                    src="/newgetwellsoon.jpeg"
+                    src="/getWellSoonBanner-SA.png"
                     alt="Health and recovery support"
                     fill
                     className="object-cover transition-transform duration-300 hover:scale-105"
@@ -144,9 +144,9 @@ export default function SupportPage() {
             {/* Milestone Birthdays */}
             <div id="milestone-birthdays" className="scroll-mt-24">
               <Card className="border-2 overflow-hidden animate-fade-in-up animation-delay-400 transition-all duration-300 hover:shadow-lg">
-                <div className="relative h-80 w-full">
+                <div className="relative w-full" style={{ aspectRatio: '6/1' }}>
                   <Image
-                    src="/birthdayMilestone.jpeg"
+                    src="/birthdayBanner-SA.png"
                     alt="Birthday milestone celebration"
                     fill
                     className="object-cover transition-transform duration-300 hover:scale-105"
@@ -192,12 +192,12 @@ export default function SupportPage() {
             {/* Mission: Mentoring Scheme */}
             <div id="mentoring-scheme" className="scroll-mt-24">
               <Card className="border-2 overflow-hidden animate-fade-in-up animation-delay-600 transition-all duration-300 hover:shadow-lg">
-                <div className="relative h-80 w-full">
+                <div className="relative aspect-[16/9] w-full">
                   <Image
                     src="/mentoringMission.png"
                     alt="Mentoring and mission support"
                     fill
-                    className="object-cover object-center transition-transform duration-300 hover:scale-105"
+                    className="object-contain object-center transition-transform duration-300 hover:scale-105"
                   />
                 </div>
                 <CardHeader>
