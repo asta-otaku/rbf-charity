@@ -27,6 +27,7 @@ export default function JoinPage() {
           <Button href="/contact" variant="outline" size="lg">
             Contact Us
           </Button>
+          <MembershipFormModal />
         </div>
       </Hero>
 

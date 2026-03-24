@@ -39,7 +39,7 @@ export default function SupportPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-5xl space-y-12">
             {/* Bereavement Support */}
-            <div id="bereavement-support" className="scroll-mt-24">
+            <div id="bereavement-support" className="scroll-mt-24 space-y-12" >
               <Card className="border-2 overflow-hidden animate-fade-in-up transition-all duration-300 hover:shadow-lg">
                 <div className="relative w-full" style={{ aspectRatio: '6/1' }}>
                   <Image
