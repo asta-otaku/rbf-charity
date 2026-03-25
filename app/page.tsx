@@ -56,7 +56,7 @@ export default function Home() {
           <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:items-center">
             <div className="relative h-64 w-full overflow-hidden rounded-lg sm:h-80 lg:h-96 animate-fade-in-up">
               <Image
-                src="/whatwedo.png"
+                src="/whatWeDo.png"
                 alt="Community support and unity"
                 fill
                 className="object-cover transition-transform duration-500 hover:scale-105"
