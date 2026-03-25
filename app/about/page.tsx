@@ -82,9 +82,9 @@ export default function AboutPage() {
       <Hero
         title="About Us"
         description={`Welcome to the Regentonians' Benevolent Fund, learn about our mission, values, and how we operate`}
-      // imageUrl="/purplefootballteam.jpeg"
-      // imageAlt="About the fund mission"
-      // imagePosition="center"
+        // imageUrl="/purplefootballteam.jpeg"
+        // imageAlt="About the fund mission"
+        // imagePosition="center"
       >
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <span className="inline-flex items-center gap-2">
@@ -143,10 +143,10 @@ export default function AboutPage() {
                 Who We Support
               </h2>
               <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                The Regentonians' Benevolent Fund supports contributing Alumni of Sierra Leone
-                Grammar School. Our members are former students who share a
-                common bond through their educational experience and continue to
-                support one another throughout their lives.
+                The Regentonians' Benevolent Fund supports contributing Alumni
+                of Sierra Leone Grammar School. Our members are former students
+                who share a common bond through their educational experience and
+                continue to support one another throughout their lives.
               </p>
               <p className="mt-4 text-lg leading-8 text-muted-foreground">
                 We provide assistance to members and their families during times
@@ -284,7 +284,8 @@ export default function AboutPage() {
               Our People
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Meet the dedicated individuals who make the Regentonians' Benevolent Fund possible
+              Meet the dedicated individuals who make the Regentonians'
+              Benevolent Fund possible
             </p>
           </div>
           <div className="mx-auto grid max-w-6xl gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -301,13 +302,25 @@ export default function AboutPage() {
                   className={`overflow-hidden animate-fade-in-up ${delayClass} transition-all duration-300 hover:shadow-lg flex flex-col items-center text-center`}
                 >
                   <div className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-full overflow-hidden bg-muted mt-6 shrink-0 ring-2 ring-primary/20">
-                    <Image
-                      src={member.imageUrl}
-                      alt={member.name}
-                      fill
-                      sizes="(max-width: 640px) 192px, 224px"
-                      className="object-cover object-top transition-transform duration-300 hover:scale-105"
-                    />
+                    {member.imageUrl ? (
+                      <Image
+                        src={member.imageUrl}
+                        alt={member.name}
+                        fill
+                        sizes="(max-width: 640px) 192px, 224px"
+                        className="object-cover object-top transition-transform duration-300 hover:scale-105"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center bg-primary/10">
+                        <span className="text-5xl font-bold tracking-widest text-primary">
+                          {member.name
+                            .split(" ")
+                            .map((n) => n.charAt(0))
+                            .slice(0, 2)
+                            .join("")}
+                        </span>
+                      </div>
+                    )}
                   </div>
                   <CardHeader className="text-center pb-2">
                     <CardTitle className="text-xl">{member.name}</CardTitle>
