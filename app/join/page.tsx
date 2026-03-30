@@ -19,10 +19,19 @@ export default function JoinPage() {
       >
         <div className="mx-auto flex w-full max-w-xs flex-col items-center gap-3 sm:max-w-none">
           <div className="flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:justify-center">
-            <Button href="/contribute" size="lg" className="w-full sm:w-auto sm:min-w-52">
+            <Button
+              href="/contribute"
+              size="lg"
+              className="w-full sm:w-auto sm:min-w-52"
+            >
               Contribute Now
             </Button>
-            <Button href="/contact" variant="outline" size="lg" className="w-full sm:w-auto sm:min-w-52">
+            <Button
+              href="/contact"
+              variant="outline"
+              size="lg"
+              className="w-full sm:w-auto sm:min-w-52"
+            >
               Contact Us
             </Button>
             <MembershipFormModal className="w-full sm:w-auto sm:min-w-52" />
@@ -37,7 +46,7 @@ export default function JoinPage() {
           <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:items-center">
             <div className="relative h-64 w-full overflow-hidden rounded-lg sm:h-80 lg:h-96 animate-fade-in-up">
               <Image
-                src="/ourMission.jpeg"
+                src="/newOurMission.png"
                 alt="Community membership and joining"
                 fill
                 className="object-cover transition-transform duration-500 hover:scale-105"
@@ -52,9 +61,9 @@ export default function JoinPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-lg leading-8 text-muted-foreground">
-                  The Regentonians&apos; Benevolent Fund is open to all alumni of
-                  Sierra Leone Grammar School. Whether you graduated recently or
-                  many years ago, you are welcome to join our community of
+                  The Regentonians&apos; Benevolent Fund is open to all alumni
+                  of Sierra Leone Grammar School. Whether you graduated recently
+                  or many years ago, you are welcome to join our community of
                   caring individuals committed to supporting one another.
                 </p>
                 <p className="text-lg leading-8 text-muted-foreground">
