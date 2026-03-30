@@ -35,7 +35,7 @@ const teamMembers: TeamMember[] = [
     id: "3",
     name: "Rev. Maurice Browne",
     role: "Clergy",
-    imageUrl: "/team-members/mauriceBrown.jpeg",
+    imageUrl: "/team-members/newMauriceBrown.png",
   },
   {
     id: "4",
@@ -88,10 +88,19 @@ export default function AboutPage() {
       >
         <div className="mx-auto flex w-full max-w-xs flex-col items-center gap-3 sm:max-w-none">
           <div className="flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:justify-center">
-            <Button href="/contribute" size="lg" className="w-full sm:w-auto sm:min-w-52">
+            <Button
+              href="/contribute"
+              size="lg"
+              className="w-full sm:w-auto sm:min-w-52"
+            >
               Contribute Now
             </Button>
-            <Button href="/join" variant="outline" size="lg" className="w-full sm:w-auto sm:min-w-52">
+            <Button
+              href="/join"
+              variant="outline"
+              size="lg"
+              className="w-full sm:w-auto sm:min-w-52"
+            >
               How to Join
             </Button>
           </div>
@@ -105,7 +114,7 @@ export default function AboutPage() {
           <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:items-center">
             <div className="relative h-64 w-full overflow-hidden rounded-lg sm:h-80 lg:h-96 animate-fade-in-up">
               <Image
-                src="/ourMission.jpeg"
+                src="/newOurMission.png"
                 alt="Community mission and purpose"
                 fill
                 className="object-cover transition-transform duration-500 hover:scale-105"
@@ -143,10 +152,11 @@ export default function AboutPage() {
                 Who We Support
               </h2>
               <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                The Regentonians&apos; Benevolent Fund supports contributing Alumni
-                of Sierra Leone Grammar School. Our members are former students
-                who share a common bond through their educational experience and
-                continue to support one another throughout their lives.
+                The Regentonians&apos; Benevolent Fund supports contributing
+                Alumni of Sierra Leone Grammar School. Our members are former
+                students who share a common bond through their educational
+                experience and continue to support one another throughout their
+                lives.
               </p>
               <p className="mt-4 text-lg leading-8 text-muted-foreground">
                 We provide assistance to members and their families during times

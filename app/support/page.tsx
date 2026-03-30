@@ -29,10 +29,19 @@ export default function SupportPage() {
       >
         <div className="mx-auto flex w-full max-w-xs flex-col items-center gap-3 sm:max-w-none">
           <div className="flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:justify-center">
-            <Button href="/contribute" size="lg" className="w-full sm:w-auto sm:min-w-52">
+            <Button
+              href="/contribute"
+              size="lg"
+              className="w-full sm:w-auto sm:min-w-52"
+            >
               Contribute Now
             </Button>
-            <Button href="/join" variant="outline" size="lg" className="w-full sm:w-auto sm:min-w-52">
+            <Button
+              href="/join"
+              variant="outline"
+              size="lg"
+              className="w-full sm:w-auto sm:min-w-52"
+            >
               How to Join
             </Button>
           </div>
@@ -74,8 +83,8 @@ export default function SupportPage() {
                     during these challenging times.
                   </p>
                   <p className="text-lg leading-8 text-muted-foreground">
-                    Our &ldquo;Cry Berrin&rdquo; programme ensures that members and their
-                    families receive the support they need to navigate
+                    Our &ldquo;Cry Berrin&rdquo; programme ensures that members
+                    and their families receive the support they need to navigate
                     bereavement with dignity. We understand that grief affects
                     everyone differently, and we are here to help in whatever
                     way is most meaningful.
@@ -104,7 +113,7 @@ export default function SupportPage() {
               <Card className="border-2 overflow-hidden animate-fade-in-up animation-delay-200 transition-all duration-300 hover:shadow-lg">
                 <div className="relative w-full" style={{ aspectRatio: "6/1" }}>
                   <Image
-                    src="/getWellSoonBanner.png"
+                    src="/getWellBanner.png"
                     alt="Health and recovery support"
                     fill
                     className="object-cover transition-transform duration-300 hover:scale-105"
@@ -184,8 +193,8 @@ export default function SupportPage() {
                   <p className="text-lg leading-8 text-muted-foreground">
                     Whether it&apos;s a 50th, 60th, 70th, or another significant
                     milestone, we come together to celebrate, share memories,
-                    and express our appreciation for the member&apos;s presence in
-                    our community.
+                    and express our appreciation for the member&apos;s presence
+                    in our community.
                   </p>
                   <div className="pt-4">
                     <p className="font-medium text-foreground">
@@ -283,22 +292,22 @@ export default function SupportPage() {
                   Contribute Now
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
-              <Button
-                href="/contact"
-                variant="outline"
-                size="lg"
-                className="w-full transition-transform duration-200 hover:scale-105 sm:w-auto sm:min-w-52"
-              >
-                Contact Us
-              </Button>
-              <Button
-                href="/join"
-                variant="secondary"
-                size="lg"
-                className="w-full transition-transform duration-200 hover:scale-105 sm:w-auto sm:min-w-52"
-              >
-                Join RBF
-              </Button>
+                <Button
+                  href="/contact"
+                  variant="outline"
+                  size="lg"
+                  className="w-full transition-transform duration-200 hover:scale-105 sm:w-auto sm:min-w-52"
+                >
+                  Contact Us
+                </Button>
+                <Button
+                  href="/join"
+                  variant="secondary"
+                  size="lg"
+                  className="w-full transition-transform duration-200 hover:scale-105 sm:w-auto sm:min-w-52"
+                >
+                  Join RBF
+                </Button>
               </div>
               <DisclaimerLink />
             </div>
