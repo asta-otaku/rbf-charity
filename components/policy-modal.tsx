@@ -28,32 +28,18 @@ const documents = [
   },
 ];
 
-export function PolicyModal({ asButton = false, className }: { asButton?: boolean; className?: string }) {
+export function PolicyModal() {
   const [open, setOpen] = useState(false);
 
   return (
     <>
-      {asButton ? (
-        <Button
-          type="button"
-          variant="secondary"
-          size="lg"
-          onClick={() => setOpen(true)}
-          className={className}
-        >
-          <FileText className="mr-2 h-5 w-5" />
-          Policy Documents
-        </Button>
-      ) : (
-        <button
-          type="button"
-          onClick={() => setOpen(true)}
-          className="text-muted-foreground hover:text-primary text-sm transition-colors"
-        >
-          Policy Documents
-        </button>
-      )}
-
+      <button
+        type="button"
+        onClick={() => setOpen(true)}
+        className="text-muted-foreground hover:text-primary text-sm transition-colors"
+      >
+        Policy Documents
+      </button>
 
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="max-w-lg w-full">
