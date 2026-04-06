@@ -10,12 +10,6 @@ interface HeroProps {
   imagePosition?: "top" | "center" | "bottom";
 }
 
-const imagePositionClass = {
-  top: "object-top",
-  center: "object-center",
-  bottom: "object-bottom",
-} as const;
-
 export function Hero({ title, description, children, imageUrl, imageAlt, imagePosition = "top" }: HeroProps) {
   const defaultAlt = "Community support and unity";
   const hasImage = Boolean(imageUrl);
@@ -29,7 +23,7 @@ export function Hero({ title, description, children, imageUrl, imageAlt, imagePo
             src={imageUrl!}
             alt={imageAlt || defaultAlt}
             fill
-            className={`object-cover ${imagePositionClass[imagePosition]}`}
+            className={`object-cover object-${imagePosition}`}
             priority
             quality={90}
           />
